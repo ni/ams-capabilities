@@ -6,6 +6,7 @@ This repo contains the various implementations for BTS-compatible Capabilities w
 
 ## Examples
 
-* Resistance Control - This device provides control of resistance between its output terminals, where when given a resistance value to regulate, it will do so.
-* Temperature Control - This device can provide control of temperature, either for a Chiller (Water Conditioner) or a Thermal Chamber. Given a temperature value it will attempt to regulate to that value.
-* Battery Emulator - This device can provide emulated battery signals which might include State of Charge (a voltage), State of Health, and might provide some amount of current.
+* Resistance Control - A device that uses this will provide control of resistance between its output terminals, where when given a resistance value to regulate, it will do so.
+* Power Control -  A device that uses this will provide control of output power through a single channel of Power setpoints. This is usually coupled to a state, so, you set either CC or CV and then use power to control the other independent variable.
+* Temperature Control - A device that uses this will provide control of temperature, either for a Chiller (Water Conditioner) or a Thermal Chamber. Given a temperature value it will attempt to regulate to that value.
+* Battery Emulator - A device that uses this will provide emulated battery signals which might include State of Charge (a voltage), State of Health, and might provide some amount of current.
