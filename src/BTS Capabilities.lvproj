@@ -20,11 +20,12 @@
 			<Item Name="Current Control.lvclass" Type="LVClass" URL="../Capabilities/Current/Current Control.lvclass"/>
 			<Item Name="Power Control.lvclass" Type="LVClass" URL="../Capabilities/Power/Power Control.lvclass"/>
 			<Item Name="Resistance Control.lvclass" Type="LVClass" URL="../Capabilities/Resistance/Resistance Control.lvclass"/>
-			<Item Name="Current Limits.lvclass" Type="LVClass" URL="../Capabilities/Current Limits/Current Limits.lvclass"/>
 			<Item Name="Voltage Limits.lvclass" Type="LVClass" URL="../Capabilities/Voltage Limits/Voltage Limits.lvclass"/>
+			<Item Name="Current Limits.lvclass" Type="LVClass" URL="../Capabilities/Current Limits/Current Limits.lvclass"/>
 			<Item Name="Power Limits.lvclass" Type="LVClass" URL="../Capabilities/Power Limits/Power Limits.lvclass"/>
 		</Item>
 		<Item Name="Capability.lvclass" Type="LVClass" URL="../Capabilities/Capability/Capability.lvclass"/>
+		<Item Name="Utilities.lvlib" Type="Library" URL="../Capabilities/Utilities/Utilities.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="AdasHilChannelServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/ADAS Replay HIL/AdasHilServices/AdasHilChannelServices.lvlib"/>
