@@ -28,6 +28,45 @@
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
+			<Item Name="BTS Source Dist" Type="Source Distribution">
+				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
+				<Property Name="Bld_buildCacheID" Type="Str">{59E199FA-5241-47F9-9824-43A27F27F9EB}</Property>
+				<Property Name="Bld_buildSpecName" Type="Str">BTS Source Dist</Property>
+				<Property Name="Bld_excludedDirectory[0]" Type="Path">vi.lib</Property>
+				<Property Name="Bld_excludedDirectory[0].pathType" Type="Str">relativeToAppDir</Property>
+				<Property Name="Bld_excludedDirectory[1]" Type="Path">resource/objmgr</Property>
+				<Property Name="Bld_excludedDirectory[1].pathType" Type="Str">relativeToAppDir</Property>
+				<Property Name="Bld_excludedDirectory[2]" Type="Path">/C/ProgramData/National Instruments/InstCache/23.0</Property>
+				<Property Name="Bld_excludedDirectory[3]" Type="Path">/C/Users/srd_user/Documents/LabVIEW Data/2023(64-bit)/ExtraVILib</Property>
+				<Property Name="Bld_excludedDirectory[4]" Type="Path">instr.lib</Property>
+				<Property Name="Bld_excludedDirectory[4].pathType" Type="Str">relativeToAppDir</Property>
+				<Property Name="Bld_excludedDirectory[5]" Type="Path">user.lib</Property>
+				<Property Name="Bld_excludedDirectory[5].pathType" Type="Str">relativeToAppDir</Property>
+				<Property Name="Bld_excludedDirectoryCount" Type="Int">6</Property>
+				<Property Name="Bld_localDestDir" Type="Path">../builds/BTS Source Dist</Property>
+				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
+				<Property Name="Bld_previewCacheID" Type="Str">{09C1546B-EB16-42AE-B2E3-D1B532DCBFEB}</Property>
+				<Property Name="Bld_version.build" Type="Int">4</Property>
+				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
+				<Property Name="Destination[0].path" Type="Path">../builds/BTS Source Dist</Property>
+				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
+				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
+				<Property Name="Destination[1].path" Type="Path">../builds/BTS Source Dist/data</Property>
+				<Property Name="DestinationCount" Type="Int">2</Property>
+				<Property Name="Source[0].itemID" Type="Str">{F7C35658-B8AE-4EF4-A308-35C1D1496969}</Property>
+				<Property Name="Source[0].type" Type="Str">Container</Property>
+				<Property Name="Source[1].Container.applyDestination" Type="Bool">true</Property>
+				<Property Name="Source[1].Container.applyInclusion" Type="Bool">true</Property>
+				<Property Name="Source[1].Container.depDestIndex" Type="Int">0</Property>
+				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/My Computer/src/Capabilities</Property>
+				<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[1].type" Type="Str">Container</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/src/lvaddoninfo.json</Property>
+				<Property Name="SourceCount" Type="Int">3</Property>
+			</Item>
 			<Item Name="BTS Capabilities" Type="{E661DAE2-7517-431F-AC41-30807A3BDA38}">
 				<Property Name="NIPKG_addToFeed" Type="Bool">false</Property>
 				<Property Name="NIPKG_allDependenciesToFeed" Type="Bool">false</Property>
@@ -40,7 +79,7 @@
 				<Property Name="NIPKG_installerBuiltBefore" Type="Bool">false</Property>
 				<Property Name="NIPKG_installerDestination" Type="Path">../builds/NI_AB_PROJECTNAME/BTS Capabilities/Package Installer</Property>
 				<Property Name="NIPKG_installerDestination.Type" Type="Str">relativeToCommon</Property>
-				<Property Name="NIPKG_lastBuiltPackage" Type="Str">bts-capabilities_1.0.0-2_windows_x64.nipkg</Property>
+				<Property Name="NIPKG_lastBuiltPackage" Type="Str">bts-capabilities_0.2.0-0_windows_x64.nipkg</Property>
 				<Property Name="NIPKG_license" Type="Ref"></Property>
 				<Property Name="NIPKG_packageVersion" Type="Bool">false</Property>
 				<Property Name="NIPKG_releaseNotes" Type="Str"></Property>
@@ -49,7 +88,7 @@
 				<Property Name="PKG_actions.Count" Type="Int">0</Property>
 				<Property Name="PKG_autoIncrementBuild" Type="Bool">true</Property>
 				<Property Name="PKG_autoSelectDeps" Type="Bool">true</Property>
-				<Property Name="PKG_buildNumber" Type="Int">3</Property>
+				<Property Name="PKG_buildNumber" Type="Int">1</Property>
 				<Property Name="PKG_buildSpecName" Type="Str">BTS Capabilities</Property>
 				<Property Name="PKG_dependencies.Count" Type="Int">1</Property>
 				<Property Name="PKG_dependencies[0].Enhanced" Type="Bool">false</Property>
@@ -106,46 +145,7 @@
 				<Property Name="PKG_sources[1].ID" Type="Ref">/My Computer/src/lvaddoninfo.json</Property>
 				<Property Name="PKG_sources[1].Type" Type="Str">File</Property>
 				<Property Name="PKG_synopsis" Type="Str">BTS Capabilities</Property>
-				<Property Name="PKG_version" Type="Str">1.0.0</Property>
-			</Item>
-			<Item Name="BTS Source Dist" Type="Source Distribution">
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
-				<Property Name="Bld_buildCacheID" Type="Str">{59E199FA-5241-47F9-9824-43A27F27F9EB}</Property>
-				<Property Name="Bld_buildSpecName" Type="Str">BTS Source Dist</Property>
-				<Property Name="Bld_excludedDirectory[0]" Type="Path">vi.lib</Property>
-				<Property Name="Bld_excludedDirectory[0].pathType" Type="Str">relativeToAppDir</Property>
-				<Property Name="Bld_excludedDirectory[1]" Type="Path">resource/objmgr</Property>
-				<Property Name="Bld_excludedDirectory[1].pathType" Type="Str">relativeToAppDir</Property>
-				<Property Name="Bld_excludedDirectory[2]" Type="Path">/C/ProgramData/National Instruments/InstCache/23.0</Property>
-				<Property Name="Bld_excludedDirectory[3]" Type="Path">/C/Users/srd_user/Documents/LabVIEW Data/2023(64-bit)/ExtraVILib</Property>
-				<Property Name="Bld_excludedDirectory[4]" Type="Path">instr.lib</Property>
-				<Property Name="Bld_excludedDirectory[4].pathType" Type="Str">relativeToAppDir</Property>
-				<Property Name="Bld_excludedDirectory[5]" Type="Path">user.lib</Property>
-				<Property Name="Bld_excludedDirectory[5].pathType" Type="Str">relativeToAppDir</Property>
-				<Property Name="Bld_excludedDirectoryCount" Type="Int">6</Property>
-				<Property Name="Bld_localDestDir" Type="Path">../builds/BTS Source Dist</Property>
-				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
-				<Property Name="Bld_previewCacheID" Type="Str">{09C1546B-EB16-42AE-B2E3-D1B532DCBFEB}</Property>
-				<Property Name="Bld_version.build" Type="Int">3</Property>
-				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
-				<Property Name="Destination[0].path" Type="Path">../builds/BTS Source Dist</Property>
-				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
-				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
-				<Property Name="Destination[1].path" Type="Path">../builds/BTS Source Dist/data</Property>
-				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{F7C35658-B8AE-4EF4-A308-35C1D1496969}</Property>
-				<Property Name="Source[0].type" Type="Str">Container</Property>
-				<Property Name="Source[1].Container.applyDestination" Type="Bool">true</Property>
-				<Property Name="Source[1].Container.applyInclusion" Type="Bool">true</Property>
-				<Property Name="Source[1].Container.depDestIndex" Type="Int">0</Property>
-				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/My Computer/src/Capabilities</Property>
-				<Property Name="Source[1].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="Source[1].type" Type="Str">Container</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/src/lvaddoninfo.json</Property>
-				<Property Name="SourceCount" Type="Int">3</Property>
+				<Property Name="PKG_version" Type="Str">0.2.0</Property>
 			</Item>
 		</Item>
 	</Item>
