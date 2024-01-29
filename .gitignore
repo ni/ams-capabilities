@@ -1,2 +1,4 @@
 *.lvlps
 *.aliases
+*builds
+*build
