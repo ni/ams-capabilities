@@ -28,6 +28,7 @@
 			<Item Name="Cycler.lvclass" Type="LVClass" URL="../../Capabilities/Cycler/Cycler.lvclass"/>
 			<Item Name="Power Control.lvclass" Type="LVClass" URL="../../Capabilities/Power/Power Control.lvclass"/>
 			<Item Name="Resistance Control.lvclass" Type="LVClass" URL="../../Capabilities/Resistance/Resistance Control.lvclass"/>
+			<Item Name="Utilities.lvlib" Type="Library" URL="../../Capabilities/Utilities/Utilities.lvlib"/>
 			<Item Name="Voltage Control.lvclass" Type="LVClass" URL="../../Capabilities/Voltage/Voltage Control.lvclass"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>

@@ -1,0 +1,5 @@
+{
+    "AddonName": "ni-bts-capabilities",
+    "ApiVersion": "v1",
+    "MinimumSupportedLVVersion": "23.0"
+}
