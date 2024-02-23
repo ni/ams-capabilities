@@ -202,6 +202,33 @@
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 			<Property Name="NI.ClassItem.State" Type="Int">1074541072</Property>
 		</Item>
+		<Item Name="Read Initialize Command (Array).vi" Type="VI" URL="../Read Initialize Command (Array).vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;1!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!(%!B&amp;E.I97ZH:71A&lt;X)A2GFS=X1A1W&amp;M&lt;$]!!"*!)1V&amp;&lt;G&amp;C&lt;'5A4X6U=(6U!"B!1!!"`````Q!&amp;#EFO;82J97RJ?G5!!#:!=!!?!!!1$E.Z9WRF=CZM&gt;G.M98.T!!!+1XFD&lt;'6S)'^V&gt;!!!"!!!!":!5!!$!!!!!1!##'6S=G^S)'FO!!!E1(!!(A!!%!Z$?7.M:8)O&lt;(:D&lt;'&amp;T=Q!!#5.Z9WRF=C"J&lt;A"B!0!!$!!$!!1!"A!(!!A!#!!)!!A!#1!)!!A!#A-!!(A!!!U)!!!*!!!!#1!!!!U,!!!!!!!!!!!!!!!!!!!!!!!!#A!!!!!!!!!!!!!!%!!!$1!!!!Q!!!!!!!!!!!!!!1!,!!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">16777216</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">269230096</Property>
+		</Item>
+		<Item Name="Read Initialize Command (Single).vi" Type="VI" URL="../Read Initialize Command (Single).vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;*!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!(%!B&amp;E.I97ZH:71A&lt;X)A2GFS=X1A1W&amp;M&lt;$]!!""!)1J*&lt;GFU;7&amp;M;8JF!!!G1(!!(A!!%!Z$?7.M:8)O&lt;(:D&lt;'&amp;T=Q!!#E.Z9WRF=C"P&gt;81!!!1!!!!71&amp;!!!Q!!!!%!!ABF=H*P=C"J&lt;A!!%U!$!!V$;'&amp;O&lt;G6M)%FO:'6Y!#2!=!!?!!!1$E.Z9WRF=CZM&gt;G.M98.T!!!*1XFD&lt;'6S)'FO!'%!]!!-!!-!"!!&amp;!!9!"Q!(!!=!"Q!)!!E!"Q!+!Q!!?!!!$1A!!!E!!!!*!!!!$1M!!!!!!!!!!!!!!!!!!!!!!!!+!!!!#A!!!!!!!!!1!!!.!!!!$!!!!!!!!!!!!!!"!!M!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">16777216</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">269230096</Property>
+		</Item>
+		<Item Name="Read Initialize Command.vi" Type="VI" URL="../Read Initialize Command.vi">
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!!1!!!!!1!)!0*`LS3V!!%!!!!!!!!</Property>
+			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
+			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1082143248</Property>
+		</Item>
 	</Item>
 	<Item Name="OnOff" Type="Folder">
 		<Item Name="Read OnOff Command (Array).vi" Type="VI" URL="../Read OnOff Command (Array).vi">
@@ -336,4 +363,5 @@
 		<Property Name="NI.ClassItem.State" Type="Int">1115685392</Property>
 	</Item>
 	<Item Name="dir.mnu" Type="Document" URL="../dir.mnu"/>
+	<Item Name="status.mnu" Type="Document" URL="../status.mnu"/>
 </LVClass>
