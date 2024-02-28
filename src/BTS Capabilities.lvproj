@@ -49,7 +49,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/BTS Source Dist</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{09C1546B-EB16-42AE-B2E3-D1B532DCBFEB}</Property>
-				<Property Name="Bld_version.build" Type="Int">8</Property>
+				<Property Name="Bld_version.build" Type="Int">9</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/BTS Source Dist</Property>
@@ -82,7 +82,7 @@
 				<Property Name="NIPKG_installerBuiltBefore" Type="Bool">false</Property>
 				<Property Name="NIPKG_installerDestination" Type="Path">../builds/NI_AB_PROJECTNAME/BTS Capabilities/Package Installer</Property>
 				<Property Name="NIPKG_installerDestination.Type" Type="Str">relativeToCommon</Property>
-				<Property Name="NIPKG_lastBuiltPackage" Type="Str">bts-capabilities_0.3.1-0_windows_x64.nipkg</Property>
+				<Property Name="NIPKG_lastBuiltPackage" Type="Str">bts-capabilities_0.4.0-0_windows_x64.nipkg</Property>
 				<Property Name="NIPKG_license" Type="Ref"></Property>
 				<Property Name="NIPKG_packageVersion" Type="Bool">false</Property>
 				<Property Name="NIPKG_releaseNotes" Type="Str"></Property>
@@ -152,7 +152,7 @@
 				<Property Name="PKG_sources[1].ID" Type="Ref">/My Computer/Build Specifications/BTS Source Dist</Property>
 				<Property Name="PKG_sources[1].Type" Type="Str">Build</Property>
 				<Property Name="PKG_synopsis" Type="Str">BTS Capabilities</Property>
-				<Property Name="PKG_version" Type="Str">0.3.1</Property>
+				<Property Name="PKG_version" Type="Str">0.4.0</Property>
 			</Item>
 		</Item>
 	</Item>
