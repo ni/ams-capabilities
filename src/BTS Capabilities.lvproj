@@ -49,7 +49,7 @@
 				<Property Name="Bld_localDestDir" Type="Path">../builds/BTS Source Dist</Property>
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{09C1546B-EB16-42AE-B2E3-D1B532DCBFEB}</Property>
-				<Property Name="Bld_version.build" Type="Int">6</Property>
+				<Property Name="Bld_version.build" Type="Int">9</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Destination Directory</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/BTS Source Dist</Property>
@@ -82,7 +82,7 @@
 				<Property Name="NIPKG_installerBuiltBefore" Type="Bool">false</Property>
 				<Property Name="NIPKG_installerDestination" Type="Path">../builds/NI_AB_PROJECTNAME/BTS Capabilities/Package Installer</Property>
 				<Property Name="NIPKG_installerDestination.Type" Type="Str">relativeToCommon</Property>
-				<Property Name="NIPKG_lastBuiltPackage" Type="Str">bts-capabilities_0.3.0-1_windows_x64.nipkg</Property>
+				<Property Name="NIPKG_lastBuiltPackage" Type="Str">bts-capabilities_0.4.0-0_windows_x64.nipkg</Property>
 				<Property Name="NIPKG_license" Type="Ref"></Property>
 				<Property Name="NIPKG_packageVersion" Type="Bool">false</Property>
 				<Property Name="NIPKG_releaseNotes" Type="Str"></Property>
@@ -91,7 +91,7 @@
 				<Property Name="PKG_actions.Count" Type="Int">0</Property>
 				<Property Name="PKG_autoIncrementBuild" Type="Bool">true</Property>
 				<Property Name="PKG_autoSelectDeps" Type="Bool">true</Property>
-				<Property Name="PKG_buildNumber" Type="Int">2</Property>
+				<Property Name="PKG_buildNumber" Type="Int">1</Property>
 				<Property Name="PKG_buildSpecName" Type="Str">BTS Capabilities</Property>
 				<Property Name="PKG_dependencies.Count" Type="Int">1</Property>
 				<Property Name="PKG_dependencies[0].Enhanced" Type="Bool">false</Property>
@@ -106,22 +106,22 @@
 				<Property Name="PKG_dependencies[0].Relationship" Type="Str">Required Dependency</Property>
 				<Property Name="PKG_dependencies[0].Type" Type="Str">NIPKG</Property>
 				<Property Name="PKG_description" Type="Str"></Property>
-				<Property Name="PKG_destinations.Count" Type="Int">6</Property>
-				<Property Name="PKG_destinations[0].ID" Type="Str">{0D22268E-2FCF-4052-A45C-080C5F8E87E9}</Property>
-				<Property Name="PKG_destinations[0].Subdir.Directory" Type="Str">LVAddons</Property>
-				<Property Name="PKG_destinations[0].Subdir.Parent" Type="Str">{2C2262C7-B8EE-43F9-A831-5C8814F11A92}</Property>
+				<Property Name="PKG_destinations.Count" Type="Int">4</Property>
+				<Property Name="PKG_destinations[0].ID" Type="Str">{406B3D77-B24E-4347-A1E4-B0716AC098D1}</Property>
+				<Property Name="PKG_destinations[0].Subdir.Directory" Type="Str">LabVIEW 2023</Property>
+				<Property Name="PKG_destinations[0].Subdir.Parent" Type="Str">{DCA15147-7185-4C74-A380-D9431083FB0C}</Property>
 				<Property Name="PKG_destinations[0].Type" Type="Str">Subdir</Property>
-				<Property Name="PKG_destinations[1].ID" Type="Str">{2C2262C7-B8EE-43F9-A831-5C8814F11A92}</Property>
-				<Property Name="PKG_destinations[1].Subdir.Directory" Type="Str">NI</Property>
-				<Property Name="PKG_destinations[1].Subdir.Parent" Type="Str">root_5</Property>
+				<Property Name="PKG_destinations[1].ID" Type="Str">{85FE95CD-E41B-4FC5-9DB3-DCC010EA8B57}</Property>
+				<Property Name="PKG_destinations[1].Subdir.Directory" Type="Str">vi.lib</Property>
+				<Property Name="PKG_destinations[1].Subdir.Parent" Type="Str">{406B3D77-B24E-4347-A1E4-B0716AC098D1}</Property>
 				<Property Name="PKG_destinations[1].Type" Type="Str">Subdir</Property>
-				<Property Name="PKG_destinations[2].ID" Type="Str">{34C0DB9A-FB02-4B21-8EF7-F1447241D292}</Property>
+				<Property Name="PKG_destinations[2].ID" Type="Str">{A0314C90-DA20-48F8-8B82-820342D07094}</Property>
 				<Property Name="PKG_destinations[2].Subdir.Directory" Type="Str">BTS Capabilities</Property>
-				<Property Name="PKG_destinations[2].Subdir.Parent" Type="Str">{AA2D9343-A07E-4742-B014-90C3248C5761}</Property>
+				<Property Name="PKG_destinations[2].Subdir.Parent" Type="Str">{85FE95CD-E41B-4FC5-9DB3-DCC010EA8B57}</Property>
 				<Property Name="PKG_destinations[2].Type" Type="Str">Subdir</Property>
-				<Property Name="PKG_destinations[3].ID" Type="Str">{AA2D9343-A07E-4742-B014-90C3248C5761}</Property>
-				<Property Name="PKG_destinations[3].Subdir.Directory" Type="Str">vi.lib</Property>
-				<Property Name="PKG_destinations[3].Subdir.Parent" Type="Str">{D4EE5085-62E6-4DDA-B547-B1F7B1B54385}</Property>
+				<Property Name="PKG_destinations[3].ID" Type="Str">{DCA15147-7185-4C74-A380-D9431083FB0C}</Property>
+				<Property Name="PKG_destinations[3].Subdir.Directory" Type="Str">National Instruments</Property>
+				<Property Name="PKG_destinations[3].Subdir.Parent" Type="Str">root_5</Property>
 				<Property Name="PKG_destinations[3].Type" Type="Str">Subdir</Property>
 				<Property Name="PKG_destinations[4].ID" Type="Str">{D4EE5085-62E6-4DDA-B547-B1F7B1B54385}</Property>
 				<Property Name="PKG_destinations[4].Subdir.Directory" Type="Str">1</Property>
@@ -144,15 +144,15 @@
 				<Property Name="PKG_publishToSystemLink" Type="Bool">false</Property>
 				<Property Name="PKG_section" Type="Str">Application Software</Property>
 				<Property Name="PKG_shortcuts.Count" Type="Int">0</Property>
-				<Property Name="PKG_sources.Count" Type="Int">2</Property>
-				<Property Name="PKG_sources[0].Destination" Type="Str">{D4EE5085-62E6-4DDA-B547-B1F7B1B54385}</Property>
-				<Property Name="PKG_sources[0].ID" Type="Ref">/My Computer/src/lvaddoninfo.json</Property>
-				<Property Name="PKG_sources[0].Type" Type="Str">File</Property>
+				<Property Name="PKG_sources.Count" Type="Int">1</Property>
+				<Property Name="PKG_sources[0].Destination" Type="Str">{A0314C90-DA20-48F8-8B82-820342D07094}</Property>
+				<Property Name="PKG_sources[0].ID" Type="Ref">/My Computer/Build Specifications/BTS Source Dist</Property>
+				<Property Name="PKG_sources[0].Type" Type="Str">Build</Property>
 				<Property Name="PKG_sources[1].Destination" Type="Str">{34C0DB9A-FB02-4B21-8EF7-F1447241D292}</Property>
 				<Property Name="PKG_sources[1].ID" Type="Ref">/My Computer/Build Specifications/BTS Source Dist</Property>
 				<Property Name="PKG_sources[1].Type" Type="Str">Build</Property>
 				<Property Name="PKG_synopsis" Type="Str">BTS Capabilities</Property>
-				<Property Name="PKG_version" Type="Str">0.3.0</Property>
+				<Property Name="PKG_version" Type="Str">0.4.0</Property>
 			</Item>
 		</Item>
 	</Item>
