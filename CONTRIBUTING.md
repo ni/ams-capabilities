@@ -19,11 +19,13 @@ These basic requirements should enforce meaningful consistency across capabiliti
 
 # Create a New Capability
 
+:cactus: When working with a team on Capabilties, be strategic when updating the BLS Capabilities project file because it will not be trivial to merge. 
+
 New capabilities are intended to be shared with any other Device Type, not just a Cycler (for example). Once you know that you have a new generic capability to implement, you're going to need to create a new folder and class, deriving from the Capability.lvclass.
 
 ## Create the Class
 
-1. Open the BTS Capabilities project.
+1. Open the BLS Capabilities project.
 1. Right-click the Capabilities folder.
 1. Select New->Class.
 1. Name your Capability.
