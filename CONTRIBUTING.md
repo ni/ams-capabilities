@@ -19,11 +19,13 @@ These basic requirements should enforce meaningful consistency across capabiliti
 
 # Create a New Capability
 
+:cactus: When working with a team on Capabilties, be strategic when updating the BLS Capabilities project file because it will not be trivial to merge. 
+
 New capabilities are intended to be shared with any other Device Type, not just a Cycler (for example). Once you know that you have a new generic capability to implement, you're going to need to create a new folder and class, deriving from the Capability.lvclass.
 
 ## Create the Class
 
-1. Open the BTS Capabilities project.
+1. Open the BLS Capabilities project.
 1. Right-click the Capabilities folder.
 1. Select New->Class.
 1. Name your Capability.
@@ -50,3 +52,19 @@ In these two overrides, instantiate and close the channels. Use other capabiliti
 The Accessors you're going to provide are read/writes for the various channels. This is not providing the underlying channel type to the API user as that would leak the abstraction. Follow the pattern in other Capabilities and return (ideally) just base LabVIEW types.
 
 It can be fastest to start from a simliar-typed accessor in another Capability and `Save-As` into your class so that you can leverage the code without recreating it.
+
+## New Palette Entries
+
+To add to the LabVIEW Palette, I have been successful with the built-in LabVIEW palette editor.
+
+:cactus: Save everything and close/re-open LabVIEW for this. It's not the most stable tool.
+
+1. Tools > Advanced > Edit Palette Set.
+1. Right-click the block diagram palette.
+1. Select "Insert Subpalette".
+1. In the "Insert Palette" dialog, select "Link to an existing palette".
+1. Select the root mnu at src/Capabilities/dir.mnu.
+
+Use the palette editor to add your new subpalette.
+
+:cactus: I found it simplest to create a new mnu in each Capability folder and include just the polymorphic VIs.
