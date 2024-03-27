@@ -24,4 +24,13 @@
 	<Item Name="Voltage Setpoint.ctl" Type="Class Private Data" URL="Voltage Setpoint.ctl">
 		<Property Name="NI.LibItem.Scope" Type="Int">2</Property>
 	</Item>
+	<Item Name="Initialize.vi" Type="VI" URL="../Initialize.vi">
+		<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;K!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!91&amp;!!!Q!!!!%!!ANF=H*P=C"P&gt;81A-A!%!!!!/E"Q!"Y!!"I96G^M&gt;'&amp;H:3"4:82Q&lt;WFO&gt;#ZM&gt;G.M98.T!!!56G^M&gt;'&amp;H:3"4:82Q&lt;WFO&gt;#"P&gt;81!!"2!-0````]+&lt;G^U)'FO)(6T:1!!&amp;E"1!!-!!!!"!!)):8*S&lt;X)A;7Y!!"F!"Q!34H6N9G6S)'^G)%.I97ZO:7RT!!!71$$`````$5FO=X2B&lt;G.F)%ZB&lt;75!/%"Q!"Y!!"I96G^M&gt;'&amp;H:3"4:82Q&lt;WFO&gt;#ZM&gt;G.M98.T!!!46G^M&gt;'&amp;H:3"4:82Q&lt;WFO&gt;#"J&lt;A"5!0!!$!!$!!1!"!!&amp;!!1!"!!%!!9!"Q!)!!E!#A-!!(A!!!E!!!!!!!!!!!!!!)U,!!!!!!!!!!!!!!!!!!)!!!!!#!!!!!)!!!)1!!!!EA!!!!!"!!M!!!!!</Property>
+		<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+		<Property Name="NI.ClassItem.Flags" Type="Int">1073741824</Property>
+		<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+		<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+		<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+		<Property Name="NI.ClassItem.State" Type="Int">1082401296</Property>
+	</Item>
 </LVClass>
