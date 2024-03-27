@@ -11,21 +11,26 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Devices" Type="Folder">
-			<Item Name="ExampleDevice.lvclass" Type="LVClass" URL="../ExampleDevice/ExampleDevice.lvclass"/>
+		<Item Name="Capabilities" Type="Folder">
+			<Item Name="Devices" Type="Folder">
+				<Item Name="Example Device.lvclass" Type="LVClass" URL="../ExampleDevice/Example Device.lvclass"/>
+			</Item>
+			<Item Name="Low Level Capabilities" Type="Folder">
+				<Item Name="Current" Type="Folder">
+					<Item Name="Current Actual Value.lvclass" Type="LVClass" URL="../Current Actual Value/Current Actual Value.lvclass"/>
+					<Item Name="Current Setpoint.lvclass" Type="LVClass" URL="../Current Setpoint/Current Setpoint.lvclass"/>
+				</Item>
+				<Item Name="Parents" Type="Folder">
+					<Item Name="Actual Value.lvclass" Type="LVClass" URL="../Actual Value/Actual Value.lvclass"/>
+					<Item Name="Setpoint.lvclass" Type="LVClass" URL="../Setpoint/Setpoint.lvclass"/>
+				</Item>
+				<Item Name="Voltage" Type="Folder">
+					<Item Name="Voltage Actual Value.lvclass" Type="LVClass" URL="../Voltage Actual Value/Voltage Actual Value.lvclass"/>
+					<Item Name="Voltage Setpoint.lvclass" Type="LVClass" URL="../Voltage Setpoint/Voltage Setpoint.lvclass"/>
+				</Item>
+			</Item>
+			<Item Name="Capabilities.lvclass" Type="LVClass" URL="../Capabilities/Capabilities.lvclass"/>
 		</Item>
-		<Item Name="Low Level Capabilities" Type="Folder">
-			<Item Name="Current" Type="Folder">
-				<Item Name="Current Setpoint.lvclass" Type="LVClass" URL="../Current Setpoint/Current Setpoint.lvclass"/>
-			</Item>
-			<Item Name="Parents" Type="Folder">
-				<Item Name="Setpoint.lvclass" Type="LVClass" URL="../Setpoint/Setpoint.lvclass"/>
-			</Item>
-			<Item Name="Voltage" Type="Folder">
-				<Item Name="Voltage Setpoint.lvclass" Type="LVClass" URL="../Voltage Setpoint/Voltage Setpoint.lvclass"/>
-			</Item>
-		</Item>
-		<Item Name="Capabilities.lvclass" Type="LVClass" URL="../Capabilities/Capabilities.lvclass"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="AdasHilChannelServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/ADAS Replay HIL/AdasHilServices/AdasHilChannelServices.lvlib"/>
