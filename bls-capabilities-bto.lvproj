@@ -25,6 +25,7 @@
 				<Item Name="Voltage Setpoint.lvclass" Type="LVClass" URL="../Voltage Setpoint/Voltage Setpoint.lvclass"/>
 			</Item>
 		</Item>
+		<Item Name="Capabilities.lvclass" Type="LVClass" URL="../Capabilities/Capabilities.lvclass"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="AdasHilChannelServices.lvlib" Type="Library" URL="/&lt;vilib&gt;/ADAS Replay HIL/AdasHilServices/AdasHilChannelServices.lvlib"/>
