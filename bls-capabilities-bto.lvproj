@@ -20,6 +20,10 @@
 					<Item Name="Current Actual Value.lvclass" Type="LVClass" URL="../src/Capabilities/Low Level Capabilities/Current/Current Actual Value/Current Actual Value.lvclass"/>
 					<Item Name="Current Setpoint.lvclass" Type="LVClass" URL="../src/Capabilities/Low Level Capabilities/Current/Current Setpoint/Current Setpoint.lvclass"/>
 				</Item>
+				<Item Name="Temperature" Type="Folder">
+					<Item Name="Temperature Actual Value.lvclass" Type="LVClass" URL="../src/Capabilities/Low Level Capabilities/Temperature/Temperature Actual Value/Temperature Actual Value.lvclass"/>
+					<Item Name="Temperature Setpoint.lvclass" Type="LVClass" URL="../src/Capabilities/Low Level Capabilities/Temperature/Temperature Setpoint/Temperature Setpoint.lvclass"/>
+				</Item>
 				<Item Name="Voltage" Type="Folder">
 					<Item Name="Voltage Actual Value.lvclass" Type="LVClass" URL="../src/Capabilities/Low Level Capabilities/Voltage/Voltage Actual Value/Voltage Actual Value.lvclass"/>
 					<Item Name="Voltage Setpoint.lvclass" Type="LVClass" URL="../src/Capabilities/Low Level Capabilities/Voltage/Voltage Setpoint/Voltage Setpoint.lvclass"/>
