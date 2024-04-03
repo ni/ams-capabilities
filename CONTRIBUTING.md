@@ -53,6 +53,9 @@ Your configuration should e.g. look like this if you are creating a "Temperature
 
 ![alt text](docs/img/new-capability.png)
 
+## Edit Icon
+DESCRIPTION
+
 ## Add Data and Overrides
 
 1. Open the class private data.
