@@ -7,7 +7,7 @@ Using Dragon, you can ensure you have the proper dependencies installed (Note no
 
 A basic overview of the architecture can be found here:
 https://nio365.sharepoint.com/:f:/s/EVValidationProgramTeam/Eurh0pxkQABJsnar0TopcSwB1FBsHLK8SbDPkYcjKlUcMA?e=YJwEnU
-Note: The videos are not up to
+Note: The videos are not up to date
 
 ## Add Palette
 
@@ -27,14 +27,14 @@ These basic requirements should enforce meaningful consistency across capabiliti
 1. All Controls and Indicators on a block diagram shall be configured with "Show as Icon" `Unchecked`.
 1. All Block Diagrams shall have Controls/Indicators formatted using the built-in `ctrl+space` `ctrl+t` quick-drop formatter.
 1. All icons shall have a meaningful class name in the header.
-1. All icons shall be formatted using the built-in `ctrl+space` `ctrl+k` quick-drop formatter.
-  - Use this after saving the VI
+1. All icons shall be formatted using the built-in `ctrl+space` `ctrl+k` quick-drop formatter. 
+- Use this after saving the VI
 1. All polymorphic accessors shall provide the Selector Name `Array` and `Single`, in that order.
 
 # Capabilities
 
-We categorize Capabilties in "Low Level Capabilties" (LLC) and "High Level Capabilities" (HLC). LLCs are intended to be possible used with any Device Type, not just a Cycler (for example).
-HLC are used to reflect Device Types, e.g. Cyclers, Climate Chambers, etc. They are build up using LLCs to define a standard Device which is compatible with e.g. PAtools.
+We categorize Capabilties in "Low Level Capabilties" (LLC) and "High Level Capabilities" (HLC). LLCs are intended to be used with any kind of device, not just a Cycler (for example).
+HLC are used to reflect device types, e.g. Cyclers, Climate Chambers, etc. They are build up using LLCs to define a standard device which is compatible with e.g. PAtools.
 LLCs might be derived using parent classes in order to reduce implementation work and increase maintainability.
 
 # Datatypes
@@ -58,9 +58,9 @@ Once you know that you have a new generic capability LLC to implement, you're go
 1. Right-click the "Low Level Capabilities" folder or a matching subfolder (e.g. "Current").
 1. Select New->Class.
 1. Name your Capability.
-1. Select the Capability class or an parent class as the Parent.
+1. Select the Capability class or a parent class as the Parent.
 
-Your configuration should e.g. look like this if you are creating a "Temperature Actual Value" Capability using the Actual Value parent class:
+Your configuration should e.g. look like this if you are creating a "Resistance Actual Value" Capability using the Actual Value parent class:
 
 ![alt text](docs/img/new-capability.png)
 
@@ -85,7 +85,7 @@ Depending on if you use the Capabilities.lvclass or an other parent class, you d
 
 ### Capabilities.lvclass
 1. Copy/Paste an array of Channel and single references from another capability.
-  - :cactus: Channels are commonly arrays to natively support multi-output devices. If your channel is known to be only a single instance per-plugin, you can use an element instead of an array.
+- :cactus: Channels are commonly arrays to natively support multi-output devices. If your channel is known to be only a single instance per-plugin, you can use an element instead of an array.
 1. Rename the channel array / single.
 
 ### Parent - e.g. Actual Value.lvclass
@@ -132,14 +132,13 @@ After creating the class, edit the class Icon. This allows to later apply the sa
 1. Select register "Icon Text"
 1. Enter in "Line 1 text" a fitting text which tells what class it is, e.g. "POWER S"
 
-![alt text](docs/img/class-edit-icon.png)
-
 ## Add LLCs
 Now add all LLCs which you want to use in your HLC and therefore making them a requirement. In order to do so:
 1. Open the HLC class control VI, e.g. Power Supply.ctl
 1. Drag and Drop all LLC lvclass Objects you want to use inside the "Cluster of class private data"
 
 e.g. for a HLC called "Device", which uses the LLCs "Current Actual Value", "Current Setpoint", "Voltage Actual Value" and "Voltage Setpoint" it would look like that:
+
 ![alt text](docs/img/HLC-CTL.png)
 
 ## Add Overrides
@@ -154,6 +153,7 @@ In these two overrides, instantiate and close the channels. Use the Initialize a
 ## Add Data Accessors
 For the capabilities you are using you need to create Data Accessors, depending on how your LLC looks like, you need to provide a Write or a Read VI. If you have Read/Writes for Single and Arrays, also provide polymorphic VIs. E.g. for the "Current Setpoint" LLC you need to create a "Current Read Array.vi", a "Current Read Single.vi" and the polymorphic "Current Read.vi" in your HLC.
 The "Current Read Array.vi" would look like that:
+
 ![alt text](docs/img/HLC-Current-Read.png)
 
 ## Add VIs to palette
@@ -168,7 +168,7 @@ Therefore do:
 1. Save Changes
 Note: If you have polymorphic VIs only add the polymorphy VI to the palette and not the once it contains
 
-# After Adding a Capability
+# After adding a Capability
 When you are done creating a capability, also add the description on the README.md in order to describe what the capability is good for and what it should do / be used for inside a driver
 
 # Not yet in use
