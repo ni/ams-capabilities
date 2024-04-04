@@ -27,8 +27,7 @@ These basic requirements should enforce meaningful consistency across capabiliti
 1. All Controls and Indicators on a block diagram shall be configured with "Show as Icon" `Unchecked`.
 1. All Block Diagrams shall have Controls/Indicators formatted using the built-in `ctrl+space` `ctrl+t` quick-drop formatter.
 1. All icons shall have a meaningful class name in the header.
-1. All icons shall be formatted using the built-in `ctrl+space` `ctrl+k` quick-drop formatter. 
-- Use this after saving the VI
+1. All icons shall be formatted using the built-in `ctrl+space` `ctrl+k` quick-drop formatter (Use this after saving the VI).
 1. All polymorphic accessors shall provide the Selector Name `Array` and `Single`, in that order.
 
 # Capabilities
@@ -84,8 +83,7 @@ In these two overrides, instantiate and close the channels. Use other capabiliti
 Depending on if you use the Capabilities.lvclass or an other parent class, you do the following:
 
 ### Capabilities.lvclass
-1. Copy/Paste an array of Channel and single references from another capability.
-- :cactus: Channels are commonly arrays to natively support multi-output devices. If your channel is known to be only a single instance per-plugin, you can use an element instead of an array.
+1. Copy/Paste an array of Channel and single references from another capability (if both are usefull).
 1. Rename the channel array / single.
 
 ### Parent - e.g. Actual Value.lvclass
