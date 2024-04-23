@@ -31,7 +31,9 @@ HLC are used to reflect Device Types, e.g. Cyclers, Climate Chambers, etc. They 
 * Voltage Actual Value - Used to write a received Voltage value to the channel output
 
 ## HLC
-* Device - Is only used as a simple example Ddvice using the LLCs "Current Actual Value", "Current Setpoint", "Voltage Actual Value" and "Voltage Setpoint", might be removed when we have more HLCs implemented
+* Device - Is only used as a simple example Device using the LLCs "Current Actual Value", "Current Setpoint", "Voltage Actual Value" and "Voltage Setpoint", might be removed when we have more HLCs implemented
+
+* Power Supply - Includes the following LLCs:"OnOff", "EnableOutput", Current/Voltage Setpoint and Actual Value, "Error". Optionally, "ErrorChannels", "Control Mode", Voltage/Current/Power Gradient and Limit, Power Setpoint and Actual Value are included. 
 
 # Abbreviations
 
