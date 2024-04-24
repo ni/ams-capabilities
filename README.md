@@ -23,17 +23,23 @@ HLC are used to reflect Device Types, e.g. Cyclers, Climate Chambers, etc. They 
 * Setpoint - It is used to receive a setpoint, which should be applied, e.g. a current setpoint
 
 ## LLC
-* Current Setpoint - Used to provide control of output power in Constant Current mode and accepts Current setpoints
-* Current Actual Value - Used to write a received Current value to the channel output
-* Temperature Setpoint - Used to provide control of Temperature. e.g. in a climatic chamber
-* Temperature Actual Value - Used to write a received Temperature value to the channel output
-* Voltage Setpoint - Used to provide control of output power in Constant Voltage mode and accepts Voltage setpoints
-* Voltage Actual Value - Used to write a received Voltage value to the channel output
+* Current/Temperature/Voltage/Power Setpoint - Used to provide control of output power in Constant Current/Temperature/Voltage/Power mode and accepts Current/Temperature/Voltage/Power setpoints. For example, it can be used to provide control of element in the Climate Chamber plugin.
+* Current/Temperature/Voltage/Power Actual Value - Used to write a received element value to the channel output
+* Current/Temperature/Voltage/Power Limit - Used to determine the maximum and minimum limit.
+* Current/Temperature/Voltage/Power Gradient - 
+* OnOff - sets and determines whether the device is on or off.
+* Output Enable - Determines whether an output is enabled. 
+* Error - gives the error code and resets the plugin to an executable state.
+* Error Channels - Provides the error code of a specific channel. 
+* Control Mode - setting an integer for an option or command. 
+* Parallel Mode, Iso Measurement, and Parameter Set to be added as LLCs.
 
 ## HLC
-* Device - Is only used as a simple example Device using the LLCs "Current Actual Value", "Current Setpoint", "Voltage Actual Value" and "Voltage Setpoint", might be removed when we have more HLCs implemented
+* Device - Is only used as a simple example Device using the LLCs "Current Actual Value", "Current Setpoint", "Voltage Actual Value"* and "Voltage Setpoint", might be removed when we have more HLCs implemented
 
 * Power Supply - Includes the following LLCs:"OnOff", "EnableOutput", Current/Voltage Setpoint and Actual Value, "Error". Optionally, "ErrorChannels", "Control Mode", Voltage/Current/Power Gradient and Limit, Power Setpoint and Actual Value are included. 
+
+* Climate Chamber, Chiller, and Cycler will be added as HLCs. 
 
 # Abbreviations
 
