@@ -28,10 +28,10 @@ HLC are used to reflect Device Types, e.g. Cyclers, Climate Chambers, etc. They 
 * Current/Temperature/Voltage/Power Limit - used to determine the maximum and minimum limit.
 * Current/Temperature/Voltage/Power Gradient - how fast the setpoint value can change in units per second. 
 * OnOff - sets and determines whether the device is on or off.
-* Output Enable - determines whether an output is enabled. 
+* Output Enable - Sets the output enable and checks if it is enabled. 
 * Error - gives the error code and resets the plugin to an executable state.
 * Error Channels - provides the error code of a specific channel. 
-* Control Mode - setting an integer for an option or command. 
+* Control Mode - selecting a mode (0: default, 1: Current Controlled, 2: Power Controlled)
 * Parallel Mode, Iso Measurement, and Parameter Set to be added as LLCs.
 
 ## HLC
