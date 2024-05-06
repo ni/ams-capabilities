@@ -102,6 +102,9 @@ Therefore do:
 1. Right click -> Select "Insert Subpalette"
 1. In the "Insert Palette" dialog, select "Create a new palette file" name it "dir" and save it in your created capability folder, e.g. "Temperature Actual Value".
 1. Add the VIs to the newly created subpalette
+  1. Right-click an empty slot in the new palette.
+  1. Select "Insert" > "VI(s)..."
+  1. Select all the VIs and select current folder to add all or repeat the last step to add them separately.
 1. Save Changes
 
 
@@ -163,6 +166,9 @@ Therefore do:
 1. Right click -> Select "Insert Subpalette"
 1. In the "Insert Palette" dialog, select "Create a new palette file" name it "dir" and save it in your created capability folder, e.g. "Temperature Actual Value".
 1. Add the VIs to the newly created subpalette
+  1. Right-click an empty slot in the new palette.
+  1. Select "Insert" > "VI(s)..."
+  1. Select all the VIs and select current folder to add all or repeat the last step to add them separately.
 1. Save Changes
 Note: If you have polymorphic VIs only add the polymorphy VI to the palette and not the once it contains
 

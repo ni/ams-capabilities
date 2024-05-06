@@ -32,14 +32,19 @@ HLC are used to reflect Device Types, e.g. Cyclers, Climate Chambers, etc. They 
 * Error - gives the error code and resets the plugin to an executable state.
 * Error Channels - provides the error code of a specific channel. 
 * Control Mode - selecting a mode (0: default, 1: Current Controlled, 2: Power Controlled)
-* Parallel Mode, Iso Measurement, and Parameter Set to be added as LLCs.
+* Parameter Set - controlling of the device with parameters to regulate the values if they are too large or too small
+* Parallel Mode - multiple devices connected to set a value to get higher output
+* Iso Measurement - isolation measurement for how much of the output has been lost due to external resistance and isolates the device
+* Humidity Setpoint/Gradient/Actual Value/Limit to be added as LLCs.
 
 ## HLC
 * Device - is only used as a simple example Device using the LLCs "Current Actual Value", "Current Setpoint", "Voltage Actual Value"* and "Voltage Setpoint", might be removed when we have more HLCs implemented
 
-* Power Supply - includes the following LLCs:"OnOff", "EnableOutput", Current/Voltage Setpoint and Actual Value, "Error". Optionally, "ErrorChannels", "Control Mode", Voltage/Current/Power Gradient and Limit, Power Setpoint and Actual Value are included. 
+* Power Supply - includes the following LLCs:"OnOff", "EnableOutput", Current/Voltage Setpoint and Actual Value, "Error". Optionally, "ErrorChannels", "Control Mode", Voltage/Current/Power Gradients and Limits, Power Setpoint and Actual Value are included. 
 
-* Climate Chamber, Chiller, and Cycler will be added as HLCs. 
+* Cycler - includes the following LLCs: "OnOff", "EnableOutput", Current/Voltage Setpoint, Limits, and Actual Value, "Error", "Control Mode". Optionally, "Error Channels", Voltage/Current/Power Gradients, "Iso Measurement", "Parallel Mode", and "Parameter Set" are included.
+
+* Climate Chamber and Chiller will be added as HLCs. 
 
 # Abbreviations
 
