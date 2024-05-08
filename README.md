@@ -44,7 +44,9 @@ HLC are used to reflect Device Types, e.g. Cyclers, Climate Chambers, etc. They 
 
 * Cycler - includes the following LLCs: "OnOff", "EnableOutput", Current/Voltage Setpoint, Limits, and Actual Value, "Error", "Control Mode". Optionally, "Error Channels", Voltage/Current/Power Gradients, "Iso Measurement", "Parallel Mode", and "Parameter Set" are included.
 
-* Climate Chamber and Chiller will be added as HLCs. 
+* Power Supply - includes the following LLCs:"OnOff", "EnableOutput", Current/Voltage Setpoint and Actual Value, "Error". Optionally, "ErrorChannels", "Control Mode", Voltage/Current/Power Gradient and Limit, Power Setpoint and Actual Value are included. 
+
+* Climate Chamber, Chiller, and Cycler will be added as HLCs. 
 
 # Abbreviations
 
