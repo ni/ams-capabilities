@@ -21,30 +21,33 @@ HLC are used to reflect Device Types, e.g. Cyclers, Climate Chambers, etc. They 
 ## Parents
 * Actual Value - It is used to write a measured DOUBLE value to a Channel, e.g. the measured Voltage or Current. 
 * Setpoint - It is used to receive a setpoint, which should be applied, e.g. a current setpoint
+* Limit - There is both a max and min limit value that is received.
+* Gradient - It us used to determine how fast the setpoint value should change.
 
 ## LLC
-* Current/Temperature/Voltage/Power Setpoint - used to provide control of output power in Constant Current/Temperature/Voltage/Power mode and accepts Current/Temperature/Voltage/Power setpoints. For example, it can be used to provide control of element in the Climate Chamber plugin.
-* Current/Temperature/Voltage/Power Actual Value - used to write a received element value to the channel output
-* Current/Temperature/Voltage/Power Limit - used to determine the maximum and minimum limit.
-* Current/Temperature/Voltage/Power Gradient - how fast the setpoint value can change in units per second. 
+* Current/Temperature/Voltage/Power/Humidity/Pressure/Flow Setpoint - used to provide control of output power in Constant Current/Temperature/Voltage/Power mode and accepts Current/Temperature/Voltage/Power setpoints. For example, it can be used to provide control of element in the Climate Chamber plugin.
+* Current/Temperature/Voltage/Power/Humidity/Pressure/Flow Actual Value - used to write a received element value to the channel output
+* Current/Temperature/Voltage/Power/Humidity/Pressure/Flow Limit - used to determine the maximum and minimum limit.
+* Current/Temperature/Voltage/Power/Humidity/Pressure/Flow Gradient - how fast the setpoint value can change in units per second. 
 * OnOff - sets and determines whether the device is on or off.
 * Output Enable - Sets the output enable and checks if it is enabled. 
 * Error - gives the error code and resets the plugin to an executable state.
 * Error Channels - provides the error code of a specific channel. 
-* Control Mode - selecting a mode (0: default, 1: Current Controlled, 2: Power Controlled)
+* Control Mode - selecting a mode (e.g. 0: default, 1: Current Controlled, 2: Power Controlled)
 * Parameter Set - controlling of the device with parameters to regulate the values if they are too large or too small
 * Parallel Mode - multiple devices connected to set a value to get higher output
 * Iso Measurement - isolation measurement for how much of the output has been lost due to external resistance and isolates the device
-* Humidity Setpoint/Gradient/Actual Value/Limit to be added as LLCs.
 
 ## HLC
 * Device - is only used as a simple example Device using the LLCs "Current Actual Value", "Current Setpoint", "Voltage Actual Value"* and "Voltage Setpoint", might be removed when we have more HLCs implemented
 
-* Power Supply - includes the following LLCs:"OnOff", "EnableOutput", Current/Voltage Setpoint and Actual Value, "Error". Optionally, "ErrorChannels", "Control Mode", Voltage/Current/Power Gradients and Limits, Power Setpoint and Actual Value are included. 
+* Power Supply - controls the current output needed to power up devices and includes the following LLCs:"OnOff", "EnableOutput", Current/Voltage Setpoint and Actual Value, "Error". Optionally, "ErrorChannels", "Control Mode", Voltage/Current/Power Gradients and Limits, Power Setpoint and Actual Value are included. 
 
-* Cycler - includes the following LLCs: "OnOff", "EnableOutput", Current/Voltage Setpoint, Limits, and Actual Value, "Error", "Control Mode". Optionally, "Error Channels", Voltage/Current/Power Gradients, "Iso Measurement", "Parallel Mode", and "Parameter Set" are included.
+* Cycler - reads and writes parameters to output the power to charge and discharge and includes the following LLCs: "OnOff", "EnableOutput", Current/Voltage Setpoint, Limits, and Actual Value, "Error", "Control Mode". Optionally, "Error Channels", Voltage/Current/Power Gradients, "Iso Measurement", "Parallel Mode", and "Parameter Set" are included.
 
-* Climate Chamber and Chiller will be added as HLCs. 
+* Climate Chamber - reads and writes parameters to test the DUT in simulated extreme conditions and includes the following LLCs: "OnOff", "Temperature Setpoint", "Temperature Actual Value", "Error". Optionally, "Humidity Setpoint", "Humidity Actual Value", "Temperature/Humidity Gradients", "Temperature/Humidity Limits" are included.
+
+* Chiller - sets parameters to cool down hardware and includes the following LLCs: "OnOff", "Temperature Setpoint", "Temperature Actual Value", "Error". Optionally, "Error Channels", "Temperature/Pressure/Flow Gradients", "Temperature/Pressure/Flow Limits", "Pressure/Flow Setpoints", "Pressure/Flow Actual Value" are included.
 
 # Abbreviations
 

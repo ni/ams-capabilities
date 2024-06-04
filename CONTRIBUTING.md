@@ -1,10 +1,5 @@
 # Getting Started
 
-Using Dragon, you can ensure you have the proper dependencies installed (Note not implemented yet!).
-1. Install [JKI Dragon](https://dragon.vipm.io/)
-1. Open the project with Dragon
-  - This should automatically install dependencies and even LabVIEW if not installed.
-
 A basic overview of the architecture can be found here:
 https://nio365.sharepoint.com/:f:/s/EVValidationProgramTeam/Eurh0pxkQABJsnar0TopcSwB1FBsHLK8SbDPkYcjKlUcMA?e=YJwEnU
 Note: The videos are not up to date
