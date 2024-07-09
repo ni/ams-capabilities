@@ -49,6 +49,49 @@ HLC are used to reflect Device Types, e.g. Cyclers, Climate Chambers, etc. They 
 
 * Chiller - sets parameters to cool down hardware and includes the following LLCs: "OnOff", "Temperature Setpoint", "Temperature Actual Value", "Error". Optionally, "Error Channels", "Temperature/Pressure/Flow Gradients", "Temperature/Pressure/Flow Limits", "Pressure/Flow Setpoints", "Pressure/Flow Actual Value" are included.
 
+# Channels
+
+* Note: The %d in the channel name will be replaced with a number from 1 to X depending on how many channels are created from the for loops. For example, the channel name Current.ch%d.AV will be printed as Current.ch1.AV, Current.ch2.V, and so on. 
+
+* Below is a list of channels created by each LLC.
+
+* Current Actual Value - Current.ch%d.AV
+* Current Setpoint - Current.ch%d.SP
+* Current Limit - CurrentMax.ch%d.SP , CurrentMin.ch%d.SP
+* Current Gradient - CurrentGrad.ch%d.SP
+* Voltage Actual Value - Voltage.ch%d.AV
+* Voltage Setpoint - Voltage.ch%d.SP
+* Voltage Limit - VoltageMax.ch%d.SP , VoltageMin.ch%d.SP
+* Voltage Gradient - VoltageGrad.ch%d.SP
+* Power Actual Value - Power.ch%d.AV
+* Power Setpoint - Power.ch%d.SP
+* Power Limit - PowerMax.ch%d.SP , PowerMin.ch%d.SP
+* Power Gradient - PowerGrad.ch%d.SP
+* Temperature Actual Value - Temperature.ch%d.AV
+* Temperature Setpoint - Temperature.ch%d.SP
+* Temperature Limit - TemperatureMax.ch%d.SP , TemperatureMin.ch%d.SP
+* Temperature Gradient - TemperatureGrad.ch%d.SP
+* Humidity Actual Value - Humidity.ch%d.AV
+* Humidity Setpoint - Humidity.ch%d.SP
+* Humidity Limit - HumidityMax.ch%d.SP ,HumidityMin.ch%d.SP
+* Humidity Gradient - HumidityGrad.ch%d.SP
+* Pressure Actual Value - Pressure.ch%d.AV
+* Pressure Setpoint - Pressure.ch%d.SP
+* Pressure Limit - PressureMax.ch%d.SP , PressureMin.ch%d.SP
+* Pressure Gradient - PowerGrad.ch%d.SP
+* Flow Actual Value - Flow.ch%d.AV
+* Flow Setpoint - Flow.ch%d.SP
+* Flow Limit - FlowMax.ch%d.SP , FlowMin.ch%d.SP
+* Flow Gradient - FlowGrad.ch%d.SP
+* OnOff - OnOff.ACT
+* OutputEnable - OutputEnable.ch%d.ACT , OutputEnable.ch%d.STS
+* ControlMode - ControlMode.ch%d.CTL , ControlMode.ch%d.STS
+* ParallelMode - ParallelMode.ACT , ParallelMode.STS
+* IsoMeasurement - IsoMeasurement.ACT , IsoMeasurement.STS
+* ParameterSet - ParameterSet.ch%d.CTL , ParameterSet.ch%d.STS
+* Error - ErrorAcknowledge.ACT , Error.STS , Watchdog.STS
+* ErrorChannels - Error.ch%d.STS
+
 # Abbreviations
 
 - LLC = Low Level Capability
