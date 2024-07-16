@@ -124,3 +124,6 @@ This projects only provides the capabilities and some helper VIs. To create a pl
 1. In the "Cleanup (User).vi" make sure to deinitialize your device correctly, e.g. turning it off.
 
 **Only include a Capability if your BLS Plugin will support that feature, other applications will assume your plugin can perform the actions of that Capability**
+
+# Creating own LLCs/HLCs
+Have a look on the [CONTRIBUTING.md]
