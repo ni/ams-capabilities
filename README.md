@@ -43,10 +43,7 @@ These parent calles can be used to create new LLCs:
 
 # Channels
 
-* Note: The %d in the channel name will be replaced with a number from 1 to X depending on how many channels are created from the for loops. For example, the channel name Current.ch%d.AV will be printed as Current.ch1.AV, Current.ch2.V, and so on.
-Also to the channel name the Instance Name of the plugin is automatically added before, so if the Instance Name is "BLS_Instance" the channel name will be "BLS_Instance_Current.ch1.AV".
-
-* Below is a list of channels created by each LLC.
+Below is a list of channels created by each LLC:
 
 * Current Actual Value - Current.ch%d.AV
 * Current Setpoint - Current.ch%d.SP
@@ -85,6 +82,9 @@ Also to the channel name the Instance Name of the plugin is automatically added 
 * Error - ErrorAcknowledge.ACT , Error.STS , Watchdog.STS
 * ErrorChannels - Error.ch%d.STS
 
+Note: The %d in the channel name will be replaced with a number from 1 to X depending on how many channels are created from the for loops. For example, the channel name Current.ch%d.AV will be printed as Current.ch1.AV, Current.ch2.V, and so on.
+Also to the channel name the Instance Name of the plugin is automatically added before, so if the Instance Name is "BLS_Instance" the complete channel name will be "BLS_Instance_Current.ch1.AV".
+
 # Abbreviations
 
 - LLC = Low Level Capability
@@ -112,7 +112,7 @@ This projects only provides the capabilities and some helper VIs. To create a pl
 
 These Templates can be used to create BLS plugins or as examples. They include a own README manual and also PAtools driver templates.
 
-[BLS Cycler Plugin Template](https://github.com/ni/bls-cycler-plugin-template)
-[BLS Power Supply Plugin Template](https://github.com/ni/bls-power-supply-plugin-template)
-[BLS Climate Chamber Plugin Template](https://github.com/ni/bls-climate-chamber-plugin-template)
-[BLS Chiller Plugin Template](https://github.com/ni/bls-chiller-plugin-template)
+* [BLS Cycler Plugin Template](https://github.com/ni/bls-cycler-plugin-template)
+* [BLS Power Supply Plugin Template](https://github.com/ni/bls-power-supply-plugin-template)
+* [BLS Climate Chamber Plugin Template](https://github.com/ni/bls-climate-chamber-plugin-template)
+* [BLS Chiller Plugin Template](https://github.com/ni/bls-chiller-plugin-template)
