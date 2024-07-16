@@ -1,17 +1,8 @@
 # BLS Capabilities
 
-A Capability in Battery Lab Software (BLS) is a feature which any device (Cycler, Chiller, Chamber, Power Supply, E-Load, etc) can choose to provide. When a Test Sequence is authored it will publish a list of "Requirements" and these capabilities will be used to determine if the implementation of the Device can provide that Requirement.
+A Capability in Battery Lab Software (BLS) is a feature which any device (Cycler, Chiller, Chamber, Power Supply, E-Load, etc) can choose to provide. Each capability is creating one or multiple channels, which are used to communicate between Systems, e.g. LabView and PAtools.
 
 This repo contains the various implementations for BLS-compatible Capabilities which can be used to accelerate the creation of a BLS Plugin. Include an instance of any of these classes in your BLS Plugin and it will handle the underlying channel data communication.
-
-**Only include a Capability if your BLS Plugin will support that feature, other applications will assume your plugin can perform the actions of that Capability**
-
-# Getting Started
-
-1. Drag and Drop a Capability into your BLS Plugin class. The Capability will create and access underlying channels which are named to ensure cross-compatibility for all devices.
-1. In your "Init" loop of the BLS Plugin, call the "Initialize" method for each Capability. This will create the channels. Typically this is done in Exit Init, but it's up to you.
-1. In your Process Data loop, use the Read and Write methods to access the data for that Capability.
-1. Be sure to call the "Close" methods of the Capability in your exit path.
 
 # Capabilities
 
@@ -19,12 +10,13 @@ We categorize Capabilties in "Low Level Capabilties" (LLC) and "High Level Capab
 HLC are used to reflect Device Types, e.g. Cyclers, Climate Chambers, etc. They are build up using LLCs to define a standard Device which is compatible with e.g. PAtools.
 
 ## Parents
+These parent calles can be used to create new LLCs:
 * Actual Value - It is used to write a measured DOUBLE value to a Channel, e.g. the measured Voltage or Current. 
 * Setpoint - It is used to receive a setpoint, which should be applied, e.g. a current setpoint
 * Limit - There is both a max and min limit value that is received.
 * Gradient - It us used to determine how fast the setpoint value should change.
 
-## LLC
+## LLCs
 * Current/Temperature/Voltage/Power/Humidity/Pressure/Flow Setpoint - used to provide control of output power in Constant Current/Temperature/Voltage/Power mode and accepts Current/Temperature/Voltage/Power setpoints. For example, it can be used to provide control of element in the Climate Chamber plugin.
 * Current/Temperature/Voltage/Power/Humidity/Pressure/Flow Actual Value - used to write a received element value to the channel output
 * Current/Temperature/Voltage/Power/Humidity/Pressure/Flow Limit - used to determine the maximum and minimum limit.
@@ -38,7 +30,7 @@ HLC are used to reflect Device Types, e.g. Cyclers, Climate Chambers, etc. They 
 * Parallel Mode - multiple devices connected to set a value to get higher output
 * Iso Measurement - isolation measurement for how much of the output has been lost due to external resistance and isolates the device
 
-## HLC
+## HLCs
 * Device - is only used as a simple example Device using the LLCs "Current Actual Value", "Current Setpoint", "Voltage Actual Value"* and "Voltage Setpoint", might be removed when we have more HLCs implemented
 
 * Power Supply - controls the current output needed to power up devices and includes the following LLCs:"OnOff", "EnableOutput", Current/Voltage Setpoint and Actual Value, "Error". Optionally, "ErrorChannels", "Control Mode", Voltage/Current/Power Gradients and Limits, Power Setpoint and Actual Value are included. 
@@ -51,7 +43,8 @@ HLC are used to reflect Device Types, e.g. Cyclers, Climate Chambers, etc. They 
 
 # Channels
 
-* Note: The %d in the channel name will be replaced with a number from 1 to X depending on how many channels are created from the for loops. For example, the channel name Current.ch%d.AV will be printed as Current.ch1.AV, Current.ch2.V, and so on. 
+* Note: The %d in the channel name will be replaced with a number from 1 to X depending on how many channels are created from the for loops. For example, the channel name Current.ch%d.AV will be printed as Current.ch1.AV, Current.ch2.V, and so on.
+Also to the channel name the Instance Name of the plugin is automatically added before, so if the Instance Name is "BLS_Instance" the channel name will be "BLS_Instance_Current.ch1.AV".
 
 * Below is a list of channels created by each LLC.
 
@@ -103,3 +96,23 @@ Coming from PAtools and used in capabilities for naming channels:
 - CTL = Control (an integer in order to set an option/command, e.g. for control modes) 
 - ACT = Action (do/set a certain command - boolean) 
 - STS = Status (displaying an integer as a status, can be error codes, but also in which control mode the device is)
+
+# Getting Started
+
+This projects only provides the capabilities and some helper VIs. To create a plugin use a BLS-Template. In these you can use the capabilties in this way:
+
+1. Drag and Drop a Capability into your BLS Plugin class. The Capability will create and access underlying channels which are named to ensure cross-compatibility for all devices.
+1. In the "Create Data Channels.VI" make sure to call "Initialize" methods of the Capabilities
+1. In your Process Data loop, use the Read and Write methods to access the data for the Capabilities.
+1. Be sure to call the "Close" methods of the Capabilities in your exit path.
+
+**Only include a Capability if your BLS Plugin will support that feature, other applications will assume your plugin can perform the actions of that Capability**
+
+# Templates
+
+These Templates can be used to create BLS plugins or as examples. They include a own README manual and also PAtools driver templates.
+
+[BLS Cycler Plugin Template](https://github.com/ni/bls-cycler-plugin-template)
+[BLS Power Supply Plugin Template](https://github.com/ni/bls-power-supply-plugin-template)
+[BLS Climate Chamber Plugin Template](https://github.com/ni/bls-climate-chamber-plugin-template)
+[BLS Chiller Plugin Template](https://github.com/ni/bls-chiller-plugin-template)
