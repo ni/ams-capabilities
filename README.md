@@ -1,6 +1,6 @@
 # BLS Capabilities
 
-A Capability in Battery Lab Software (BLS) is a feature which any device (Cycler, Chiller, Chamber, Power Supply, E-Load, etc) can choose to provide. Each capability is creating one or multiple channels, which are used to communicate between Systems, e.g. LabView and PAtools.
+A Capability in Battery Lab Software (BLS) is a feature which any device (Cycler, Chiller, Chamber, Power Supply, E-Load, etc) can choose to provide. Each capability is creating one or multiple channels, which are used to communicate between Systems, e.g. LabView and PAtools. They provide methods for Initialize, Close, Read and Write.
 
 This repo contains the various implementations for BLS-compatible Capabilities which can be used to accelerate the creation of a BLS Plugin. Include an instance of any of these classes in your BLS Plugin and it will handle the underlying channel data communication.
 
@@ -85,6 +85,10 @@ Below is a list of channels created by each LLC:
 Note: The %d in the channel name will be replaced with a number from 1 to X depending on how many channels are created from the for loops. For example, the channel name Current.ch%d.AV will be printed as Current.ch1.AV, Current.ch2.V, and so on.
 Also to the channel name the Instance Name of the plugin is automatically added before, so if the Instance Name is "BLS_Instance" the complete channel name will be "BLS_Instance_Current.ch1.AV".
 
+# Helper VI
+
+* Create Asset JSON.vi: This vi can be used in BLS plugins in order to write asset information. Required: asset name and serial number. Optional: vendor name, firmware version, model name, model number and hardware version. Use driver calls to get as much information about the asset as you can or use constants.
+
 # Abbreviations
 
 - LLC = Low Level Capability
@@ -97,17 +101,6 @@ Coming from PAtools and used in capabilities for naming channels:
 - ACT = Action (do/set a certain command - boolean) 
 - STS = Status (displaying an integer as a status, can be error codes, but also in which control mode the device is)
 
-# Getting Started
-
-This projects only provides the capabilities and some helper VIs. To create a plugin use a BLS-Template. In these you can use the capabilties in this way:
-
-1. Drag and Drop a Capability into your BLS Plugin class. The Capability will create and access underlying channels which are named to ensure cross-compatibility for all devices.
-1. In the "Create Data Channels.VI" make sure to call "Initialize" methods of the Capabilities
-1. In your Process Data loop, use the Read and Write methods to access the data for the Capabilities.
-1. Be sure to call the "Close" methods of the Capabilities in your exit path.
-
-**Only include a Capability if your BLS Plugin will support that feature, other applications will assume your plugin can perform the actions of that Capability**
-
 # Templates
 
 These Templates can be used to create BLS plugins or as examples. They include a own README manual and also PAtools driver templates.
@@ -116,3 +109,18 @@ These Templates can be used to create BLS plugins or as examples. They include a
 * [BLS Power Supply Plugin Template](https://github.com/ni/bls-power-supply-plugin-template)
 * [BLS Climate Chamber Plugin Template](https://github.com/ni/bls-climate-chamber-plugin-template)
 * [BLS Chiller Plugin Template](https://github.com/ni/bls-chiller-plugin-template)
+
+# Getting Started
+
+This projects only provides the capabilities and some helper VIs. To create a plugin use a BLS-Template together with this project. The Template READMEs are providing more infos, here is a summarized overview:
+
+1. Download/Clone this project and at least one Template project
+1. Copy the Template project an rename classes, etc. following the README of the template
+1. Drag and Drop a Capabilities from this project into your BLS Plugin class. The Capability will create and access underlying channels which are named to ensure cross-compatibility for all devices.
+1. In the "Create Data Channels.vi" make sure to call "Initialize" methods of the Capabilities. Here additional config parameters might be helpful. They can be added to "Configuration Params.ctl".
+1. In the "Exit Initialize (User).vi" make calls to initialize your device
+1. In the "Process Data.vi" use the "Read" and "Write" methods to read or write data from/to the channels. Between the reads and writes implement your cyclic driver calls. The values provided by the "Read" methods should be used as inputs for the driver calls. Values gotten by a driver call can be written to the channels using the "Write" methods.
+1. In the "Destroy Data Channels.vi" use the "Close" methods of the Capabilities in your exit path.
+1. In the "Cleanup (User).vi" make sure to deinitialize your device correctly, e.g. turning it off.
+
+**Only include a Capability if your BLS Plugin will support that feature, other applications will assume your plugin can perform the actions of that Capability**
