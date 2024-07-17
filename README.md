@@ -83,7 +83,7 @@ Below is a list of channels created by each LLC:
 * ErrorChannels - Error.ch%d.STS
 
 Note: The %d in the channel name will be replaced with a number from 1 to X depending on how many channels are created from the for loops. For example, the channel name Current.ch%d.AV will be printed as Current.ch1.AV, Current.ch2.V, and so on.
-Also to the channel name the Instance Name of the plugin is automatically added before, so if the Instance Name is "BLS_Instance" the complete channel name will be "BLS_Instance_Current.ch1.AV".
+Also to the channel name the Instance Name of the plugin is automatically added before, so if the Instance Name is "BLS_Instance" the complete channel name will be "BLS_Instance_Current.ch1.AV". In PAtools you will use as a channel name "_Current.ch1.AV".
 
 # Helper VI
 
