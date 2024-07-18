@@ -113,15 +113,11 @@ This project only provides the capabilities and some helper VIs. To create a plu
 * [BLS Climate Chamber Plugin Template](https://github.com/ni/bls-climate-chamber-plugin-template)
 * [BLS Chiller Plugin Template](https://github.com/ni/bls-chiller-plugin-template)
 
-# UNDER WORK
-## Adding paletts
-Therefore do:
+# Add Palette
+
+To add the Capabilities to the palette do the following
 1. Tools > Advanced > Edit Palette Set.
-1. Enter the Capabilities palette (if you do not have it, see chapter "Add Palette")
-1. Right click -> Select "Insert Subpalette"
-1. In the "Insert Palette" dialog, select "Create a new palette file" name it "dir" and save it in your created capability folder, e.g. "Temperature Actual Value".
-1. Add the VIs to the newly created subpalette
-  1. Right-click an empty slot in the new palette.
-  1. Select "Insert" > "VI(s)..."
-  1. Select all the VIs and select current folder to add all or repeat the last step to add them separately.
-1. Save Changes
+1. Right-click the block diagram palette.
+1. Select "Insert Subpalette".
+1. In the "Insert Palette" dialog, select "Link to an existing palette".
+1. Select the root mnu at src/Capabilities/dir.mnu.
