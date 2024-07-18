@@ -106,7 +106,7 @@ Take a look at the [CONTRIBUTING.md](CONTRIBUTING.md)
 
 # Creating a plugin with Templates
 
-This project only provides the capabilities and some helper VIs. To create a plugin, use a BLS-Template together with this project. [Here](BLS TEMPLATES.mld) it is described how to create your own plugin.
+This project only provides the capabilities and some helper VIs. To create a plugin, use a BLS-Template together with this project. [Here](BLSTEMPLATES.mld) it is described how to create your own plugin.
 
 * [BLS Cycler Plugin Template](https://github.com/ni/bls-cycler-plugin-template)
 * [BLS Power Supply Plugin Template](https://github.com/ni/bls-power-supply-plugin-template)
