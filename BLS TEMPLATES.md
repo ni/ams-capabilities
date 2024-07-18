@@ -26,7 +26,7 @@ Note: The templates will be soon real LabView Templates, so in near future one d
 ## Adapt the plugin to your needs
 Since the structure is for all the BLS Templates the same it is explained here using the Power Supply Template as an example.
 The project looks like that:
-![BLS Power Supply Template](docs/img/BLS-Power-Supply.png.png)
+![BLS Power Supply Template](docs/img/BLS-Power-Supply.png)
 
 The plugin will run under a PXI, therefore it is within a RT PXI Target.
 In the folder "Tests", one can use the "Test BLS Power Supply.vi" and "Test BLS Power Supply Temlate UI.vi" in order to check if the plugin does run on the PXI target.
