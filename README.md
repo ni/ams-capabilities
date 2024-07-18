@@ -101,29 +101,27 @@ Coming from PAtools and used in capabilities for naming channels:
 - ACT = Action (do/set a certain command - boolean) 
 - STS = Status (displaying an integer as a status; can be error codes, but also in which control mode the device is)
 
-# Templates
+# Creating your own LLCs/HLCs
+Take a look at the [CONTRIBUTING.md]
 
-These templates can be used to create BLS plugins or as examples. They include their own README manual and PAtools driver templates.
+# Creating a plugin with Templates
+
+This project only provides the capabilities and some helper VIs. To create a plugin, use a BLS-Template together with this project. [Here](BLS Templates.mld) it is described how to create your own plugin.
 
 * [BLS Cycler Plugin Template](https://github.com/ni/bls-cycler-plugin-template)
 * [BLS Power Supply Plugin Template](https://github.com/ni/bls-power-supply-plugin-template)
 * [BLS Climate Chamber Plugin Template](https://github.com/ni/bls-climate-chamber-plugin-template)
 * [BLS Chiller Plugin Template](https://github.com/ni/bls-chiller-plugin-template)
 
-# Getting Started
-
-This project only provides the capabilities and some helper VIs. To create a plugin, use a BLS-Template together with this project. The template READMEs provide more information; here is a summarized overview:
-
-1. Download/Clone this project and at least one template project.
-1. Copy the template project and rename classes, etc., following the README of the template.
-1. Drag and drop capabilities from this project into your BLS Plugin class. The capability will create and access underlying channels that are named to ensure cross-compatibility for all devices.
-1. In "Create Data Channels.vi" make sure to call the "Initialize" methods of the capabilities. Additional config parameters might be helpful. They can be added to "Configuration Params.ctl".
-1. In "Exit Initialize (User).vi" make calls to initialize your device.
-1. In "Process Data.vi" use the "Read" and "Write" methods to read or write data from or to the channels. Between the "Read"s and "Write"s implement your cyclic driver calls. The values provided by the "Read" methods should be used as inputs for the driver calls. Values gotten by a driver call can be written to the channels using the "Write" methods.
-1. In "Destroy Data Channels.vi" use the "Close" methods of the capabilities in your exit path.
-1. In "Cleanup (User).vi" make sure to deinitialize your device correctly, e.g., turning it off.
-
-**Only include a capability if your BLS Plugin will support that feature. Other applications will assume your plugin can perform the actions of that capability**
-
-# Creating your own LLCs/HLCs
-Take a look at the [CONTRIBUTING.md]
+###UNDER WORK###
+# Adding paletts
+Therefore do:
+1. Tools > Advanced > Edit Palette Set.
+1. Enter the Capabilities palette (if you do not have it, see chapter "Add Palette")
+1. Right click -> Select "Insert Subpalette"
+1. In the "Insert Palette" dialog, select "Create a new palette file" name it "dir" and save it in your created capability folder, e.g. "Temperature Actual Value".
+1. Add the VIs to the newly created subpalette
+  1. Right-click an empty slot in the new palette.
+  1. Select "Insert" > "VI(s)..."
+  1. Select all the VIs and select current folder to add all or repeat the last step to add them separately.
+1. Save Changes
