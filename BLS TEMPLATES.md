@@ -24,8 +24,8 @@ Note: The templates will be soon real LabView Templates, so in near future one d
     - build file under build specifications
 
 ## Adapt the plugin to your needs
-Since the structure is for all the BLS Templates the same it is explained here using the Power Supply Template as an example.
-The project looks like that:
+Since the structure is for all the BLS Templates the same it is explained here using the Power Supply Template as an example:
+
 ![BLS Power Supply Template](docs/img/BLS-Power-Supply.png)
 
 The plugin will run under a PXI, therefore it is within a RT PXI Target.
