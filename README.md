@@ -102,19 +102,19 @@ Coming from PAtools and used in capabilities for naming channels:
 - STS = Status (displaying an integer as a status; can be error codes, but also in which control mode the device is)
 
 # Creating your own LLCs/HLCs
-Take a look at the [CONTRIBUTING.md]
+Take a look at the [CONTRIBUTING.md](CONTRIBUTING.md)
 
 # Creating a plugin with Templates
 
-This project only provides the capabilities and some helper VIs. To create a plugin, use a BLS-Template together with this project. [Here](BLS Templates.mld) it is described how to create your own plugin.
+This project only provides the capabilities and some helper VIs. To create a plugin, use a BLS-Template together with this project. [Here](BLS TEMPLATES.mld) it is described how to create your own plugin.
 
 * [BLS Cycler Plugin Template](https://github.com/ni/bls-cycler-plugin-template)
 * [BLS Power Supply Plugin Template](https://github.com/ni/bls-power-supply-plugin-template)
 * [BLS Climate Chamber Plugin Template](https://github.com/ni/bls-climate-chamber-plugin-template)
 * [BLS Chiller Plugin Template](https://github.com/ni/bls-chiller-plugin-template)
 
-###UNDER WORK###
-# Adding paletts
+# UNDER WORK
+## Adding paletts
 Therefore do:
 1. Tools > Advanced > Edit Palette Set.
 1. Enter the Capabilities palette (if you do not have it, see chapter "Add Palette")
