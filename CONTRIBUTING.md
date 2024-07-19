@@ -1,18 +1,3 @@
-# Getting Started
-
-A basic overview of the architecture can be found here:
-https://nio365.sharepoint.com/:f:/s/EVValidationProgramTeam/Eurh0pxkQABJsnar0TopcSwB1FBsHLK8SbDPkYcjKlUcMA?e=YJwEnU
-Note: The videos are not up to date
-
-## Add Palette
-
-To add the Capabilities to the palette do the following
-1. Tools > Advanced > Edit Palette Set.
-1. Right-click the block diagram palette.
-1. Select "Insert Subpalette".
-1. In the "Insert Palette" dialog, select "Link to an existing palette".
-1. Select the root mnu at src/Capabilities/dir.mnu.
-
 ## Style Guide
 
 These basic requirements should enforce meaningful consistency across capabilities without causing considerable developer pain.
