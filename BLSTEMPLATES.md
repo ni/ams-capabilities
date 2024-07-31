@@ -14,6 +14,8 @@ A plugin will run on a PXI Target: The plugin can be loaded multiple times as di
 
 ## Setup your project
 Create a new LabView project by using a BLS plugin Template.
+The installation of the package will also deliver the needed PAtools modules and example plugins. They are located under:
+C:\Program Files\National Instruments\BLS plugin\PAtools
 
 ## Adapt the plugin to your needs
 Since the structure is for all the BLS Templates the same it is explained here using the Power Supply Template as an example:
