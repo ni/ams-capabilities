@@ -6,22 +6,16 @@ A plugin will run on a PXI Target: The plugin can be loaded multiple times as di
 # Creating your own plugin
 
 ## Install requirements
-1. Install PAtools
+1. Install PAtools (only needed if you will use the template with PAtools)
 1. Install LabView
 1. Install the ADAS Replay and HIL AD Development Suite for LabVIEW (if not installed together with PAtools).
 1. Install JKI JSON, Structure Error Handler and JSONtext library from VI Package Manager.
-1. Install/Download/Clone [BLS Capabilities](https://github.com/ni/bls-capabilities).
-1. Install/Download/Clone the BLS templates you want to use.
+1. Download and install the [ni-bls-capabilities package](ni-bls-capabilities_1.0.0.0_windows_x64.nipkg)
 
 ## Setup your project
-
-Note: The templates will be soon real LabView Templates, so in near future one does not need to adapt these manually, but can create a new project using the templates.
-
-1. Copy the project to a new location.
-1. Rename the following project files
-    - class and library
-    - project
-    - build file under build specifications
+Create a new LabView project by using a BLS plugin Template.
+The installation of the package will also deliver the needed PAtools modules and example plugins. They are located under:
+C:\Program Files\National Instruments\BLS plugin\PAtools
 
 ## Adapt the plugin to your needs
 Since the structure is for all the BLS Templates the same it is explained here using the Power Supply Template as an example:
