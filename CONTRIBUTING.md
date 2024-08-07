@@ -19,7 +19,7 @@ LLCs might be derived using parent classes in order to reduce implementation wor
 # Datatypes
 
 Right now for the creation of channels only these datatypes are supported:
-* INT8, INT16, INT32, INT64
+* INT8, INT16, INT32
 * UINT8, UINT16, UINT32
 * DOUBLE
 * BOOLEAN
