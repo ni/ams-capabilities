@@ -1,6 +1,6 @@
 # PAtools Integration
 
-This document describes the process of integrating a new BLS plugin/Driver in PAtools using the Template_PowerSupply_BLS module as an example. Other Templates are quite similar. If there are additionaly steps they are getting described in the PAtools Integration README of the specific template.
+This document describes the process of integrating a new BLS plugin/Driver in PAtools using the Template_PowerSupply_BLS module as an example. Other Templates are quite similar. If there are any additional steps, they will be described in the PAtools Integration README of the specific template.
 This document assumes you have the LabView side of the BLS plugin ready using [capabilities](https://github.com/ni/bls-capabilities) and the PXI target has the PAtools runtime installed. 
 
 # Create PAtools driver
@@ -11,7 +11,7 @@ This document assumes you have the LabView side of the BLS plugin ready using [c
 
     ![Import BLS PowerSupply Template ](docs/img/Import-BLS-PowerSupply-Plugin-Template.png)
 
-2. Click on the module with the right mouse button and select "Duplicate folder...".
+2. Right-click on the module and select "Duplicate Module...".
 
     ![Duplicate module](docs/img/Duplicate_Module.png)
 
@@ -23,9 +23,9 @@ This document assumes you have the LabView side of the BLS plugin ready using [c
     * Find*: enter "Template_PowerSupply_BLS"
     * Replace*: enter your device name / a module name, e.g. "NI_RMX412X"
     
-    Press "Duplicate". When finished the module "NI_RMX412X_(Module_NI_RMX412X)" appears in the path you selected
+    Press "Duplicate". When finished, the module "NI_RMX412X_(Module_NI_RMX412X)" appears in the path you selected
 
-    Note: In the following the used Normnames/Variables/Group names will all start with "NI_RMX412x". For you they will start with what ever you entered in the Replace* field.
+    Note: In the following, the used Normnames/Variables/Group names will all start with "NI_RMX412x". For you, they will start with what ever you entered in the Replace* field.
 
 4. Must do Adaptions
 
@@ -33,12 +33,12 @@ This document assumes you have the LabView side of the BLS plugin ready using [c
         * NI_RMX412x_Main.UB.Header: Enter a name you want to display in the Userbox, e.g. "NI_RMX412X"
 
     4.2 In the "NI_RMX412X_MULTIL.TAB" table (NI_RMX412X_system/userbox)
-        * NI_RMX412x_UB_ModuleDescription.CA.TXT: Enter for each language a name you want to display at the bottom of the Userbox, e.g. "NI_RMX412X"
+        * NI_RMX412x_UB_ModuleDescription.CA.TXT: For each language, enter a name you want to display at the bottom of the Userbox, e.g. "NI_RMX412X"
 
     4.3 In the "NI_RMX412X_Version" Variables group (NI_RMX412X_system/version)
         * NI_RMX412x_Version: 1.0.0 (enter a version you would like to start with, 1.0.0 is an example here)
 
-    4.4 In the PAbasic "NI_RMX412X_Version" adapt the content so you give the information when you created that module, who did create it (in the example it is "BTO") and which template version you used, e.g. like that:
+    4.4 In the PAbasic "NI_RMX412X_Version" adapt the content so you give the following information: when you created that module, who created it (in the example it is "BTO"), and which template version you used, e.g. like that:
 
     ![Version](docs/img/version.png)
 
@@ -51,17 +51,17 @@ This document assumes you have the LabView side of the BLS plugin ready using [c
     * BLS Plugin Execution Frequency: Select the Frequency with which you want to execute the plugin in Hz
     * BLS Plugin Name: Name of the plugin, e.g. "BLS Power Supply Template" 
     * BLS Pugin Version: Enter the plugin version, e.g. "1.0"
-    * Timeout for initializing: Give a value in seconds how long to wait until a timeout is triggered
+    * Timeout for initializing: Give a value (in seconds) for how long to wait until a timeout is triggered
 
     Note: The name of the lvlibp is e.g. "BLS Power Supply Template.1.0.lvlibp". So the front part is the plugin name, followed by the version. Only enter the name without the version and ending to the BLS Plugin Name and also just write the version on the BLS Plugin Version.
 
     4.6 In the Initialization of Variables group "NI_RMX412X.ch01" (NI_RMX412X_config/NI_RMX412x.ch01) adapt the initialization values to that of your device
 
-    Note: When you make changes to ch01 also do that for ch02, alternatively delete the NI_RMX412X.ch02 folder and duplicate the NI_RMX412X.ch01 folder again
+    Note: When you make changes to ch01, also do that for ch02, alternatively delete the NI_RMX412X.ch02 folder and duplicate the NI_RMX412X.ch01 folder again
 
 5. Plugin Configuration Adaptions
 
-    If you adapted the plugin configuration for your plugin you need to adapt it also in the PAscript-Graph "NI_RMX412X.PS" (NI_RMX412X_system).
+    If you adapted the plugin configuration for your plugin, you need to adapt it also in the PAscript-Graph "NI_RMX412X.PS" (NI_RMX412X_system).
 
     ![Config](docs/img/Build_Config.png)
 
@@ -71,7 +71,7 @@ This document assumes you have the LabView side of the BLS plugin ready using [c
 
 6. Plugin Capabilities
 
-    If you added, removed or do not want to use certain capabilities you need to adapt the Producers and Consumers on PAtools side in (NI_RMX412X_config/NI_RMX412X.ch01). If you removed capabilities or don't want to use them, remove the variables in every group. If you added Capabilities create needed normnames and variable initializations for them in the Variable group "NI_RMX412X.ch01.ChannelVariables". The Normnames should start with "NI_RMX412X.ch01." followed by the capability (e.g. "ControlMode") and ending with a suffix (e.g. .STS), e.g. "NI_RMX412X.ch01.ControlMode.STS". For each capability the following variables are needed:
+    If you added, removed, or do not want to use certain capabilities, you need to adapt the Producers and Consumers on PAtools side in (NI_RMX412X_config/NI_RMX412X.ch01). If you removed capabilities or don't want to use them, remove the variables in every group. If you added Capabilities create needed normnames and variable initializations for them in the Variable group "NI_RMX412X.ch01.ChannelVariables". The Normnames should start with "NI_RMX412X.ch01." followed by the capability (e.g. "ControlMode") and ending with a suffix (e.g. .STS), e.g. "NI_RMX412X.ch01.ControlMode.STS". For each capability the following variables are needed:
 
     * Value: An integer/float variable you want to read from or write to. Suffixes: .ACT, .STS, ...
     * Name: A string variable the channel name is written on, e.g. "_ControlMode.ch1.CTL". Suffix: ".CH.TXT"
