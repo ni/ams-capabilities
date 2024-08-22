@@ -18,7 +18,7 @@ The installation of the package will also deliver the needed PAtools modules and
 C:\Program Files\National Instruments\BLS plugin\PAtools
 
 ## Adapt the plugin to your needs
-Since the structure is for all the BLS Templates the same it is explained here using the Power Supply Template as an example:
+Since the structure is the same for each of the BLS templates, it is explained here using the Power Supply Template as an example:
 
 ![BLS Power Supply Template](docs/img/BLS-Power-Supply.png)
 
