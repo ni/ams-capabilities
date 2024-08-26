@@ -4,6 +4,22 @@ A capability in Battery Lab Software (BLS) is a feature that any device (Cycler,
 
 This repo contains the various implementations for BLS-compatible capabilities that can be used to accelerate the creation of a BLS Plugin. Include an instance of these classes in your BLS Plugin and it will handle the underlying channel data communication.
 
+# BLS plugins repositories compatible with PAtools
+
+Here is a list of known bls plugins used with PAtools:
+
+* [BLS Power Supply RMX-412x-plugin](https://github.com/ni/bls-power-supply-RMX-412x-plugin)
+* [BLS VCOM](https://github.com/ni/bls-vcom/)
+
+Templates:
+
+* [BLS Cycler Plugin Template](https://github.com/ni/bls-cycler-plugin-template)
+* [BLS Power Supply Plugin Template](https://github.com/ni/bls-power-supply-plugin-template)
+* [BLS Climate Chamber Plugin Template](https://github.com/ni/bls-climate-chamber-plugin-template)
+* [BLS Chiller Plugin Template](https://github.com/ni/bls-chiller-plugin-template)
+
+Note: Add further repositories via a pull request.
+
 # Capabilities
 
 We categorize capabilties into "Low Level Capabilties" (LLC) and "High Level Capabilities" (HLC). LLCs are intended to be possibly used with any device type, not just a Cycler (for example).
