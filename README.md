@@ -4,6 +4,13 @@ A capability in Battery Lab Software (BLS) is a feature that any device (Cycler,
 
 This repo contains the various implementations for BLS-compatible capabilities that can be used to accelerate the creation of a BLS Plugin. Include an instance of these classes in your BLS Plugin and it will handle the underlying channel data communication.
 
+# Requirements
+Requirements to use the BLS Capabilities and BLS Templates:
+
+* LabView2023/LabView2024
+* Battery Lab Software Plug-In Developer Toolkit (part of PAtools installer)
+* JKI JSON, Structure Error Handler and JSONtext library from VI Package Manager.
+
 # BLS plugins repositories compatible with PAtools
 
 Here is a list of known bls plugins used with PAtools:
