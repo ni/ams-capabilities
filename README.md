@@ -17,6 +17,7 @@ Here is a list of known bls plugins used with PAtools:
 
 * [BLS Power Supply RMX-412x-plugin](https://github.com/ni/bls-power-supply-RMX-412x-plugin)
 * [BLS VCOM](https://github.com/ni/bls-vcom/)
+* [BLS Bitrode BTDC Cycler](https://github.com/ni/bls-bitrode-btdc/)
 
 Templates:
 
