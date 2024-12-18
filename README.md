@@ -38,27 +38,33 @@ These parent calls can be used to create new LLCs:
 * Setpoint - It is used to receive a setpoint that should be applied, e.g., a current setpoint
 * Limit - There is both a max and min limit value that is received.
 * Gradient - It is used to determine how fast the setpoint value should change.
+* Nominal Value - It is used to write a DOUBLE value to a channel indicating the max setpoint the device will accept. Usually determined by an API call from the BLS plugin to the device. 
 
 ## LLCs
 * Current/Temperature/Voltage/Power/Humidity/Pressure/Flow Setpoint - used to provide control of output power in constant current/temperature/voltage/power mode and accepts Current/Temperature/Voltage/Power setpoints.
 * Current/Temperature/Voltage/Power/Humidity/Pressure/Flow Actual Value - used to write a received element value to the channel output
 * Current/Temperature/Voltage/Power/Humidity/Pressure/Flow Limit - used to determine the maximum and minimum limits.
-* Current/Temperature/Voltage/Power/Humidity/Pressure/Flow Gradient - how fast the setpoint value can change in units per second. 
+* Current/Temperature/Voltage/Power/Humidity/Pressure/Flow Gradient - how fast the setpoint value can change in units per second.
+* Current/Voltage/Power Nominal Value - used to write a received element value to the channel output
 * OnOff - sets and determines whether the device is on or off.
+* OnOff Channels - sets and determines whether a specific channelis is on or off.
 * Output Enable - Sets the output enable and checks if it is enabled. 
 * Error - gives the error code and resets the plugin to an executable state.
-* Error Channels - provides the error code of a specific channel. 
-* Control Mode - selecting a mode (e.g,. 0: default, 1: current controlled, 2: power controlled)
-* Parameter Set - changing pre-defined parameter sets of the controller to adapt its behavior
-* Parallel Mode - multiple devices connected to set a value to get a higher output
-* Iso Measurement - isolation measurement for how much of the output has been lost due to external resistance and isolates the device
+* Error Channels - provides the error code of a specific channel and resets the error. 
+* Control Mode - selecting a mode (e.g,. 0: default, 1: current controlled, 2: power controlled).
+* Parameter Set - changing pre-defined parameter sets of the controller to adapt its behavior.
+* Parallel Mode - multiple devices connected to set a value to get a higher output.
+* Parallel Mode Channels - multiple channels within one device connected to set a value to get a higher output.
+* Iso Measurement - isolation measurement for how much of the output has been lost due to external resistance and isolates the device.
+* Init Channels - Sets and determines whether a specific channelis is initialized or deinitialized.
+* Overload Counter Channels - Determines the remaining time a specific channel can run in an overload scenario.
 
 ## HLCs
 * Device - is only used as a simple example device that uses the LLCs "Current Actual Value", "Current Setpoint", "Voltage Actual Value" and "Voltage Setpoint" might be removed when we have more HLCs implemented.
 
 * Power Supply - controls the current output needed to power up devices and includes the following LLCs: "OnOff", "EnableOutput", Current/Voltage Setpoint and Actual Value, "Error". Optionally, "ErrorChannels", "Control Mode", Voltage/Current/Power Gradients and Limits, Power Setpoint and Actual Value are included. 
 
-* Cycler - reads and writes parameters to output the power to charge and discharge and includes the following LLCs: "OnOff", "EnableOutput", Current/Voltage Setpoint, Limits, and Actual Value, "Error", "Control Mode". Optionally, "Error Channels", Voltage/Current/Power Gradients, "Iso Measurement", "Parallel Mode", and "Parameter Set" are included.
+* Cycler - reads and writes parameters to output the power to charge and discharge and includes the following LLCs: "OnOff", "EnableOutput", Current/Voltage/Power Setpoint, Limits, and Actual Value, "Error", "Control Mode". Optionally, "Error Channels", Voltage/Current/Power Gradients, Nominal Value, "Iso Measurement", "Parallel Mode", and "Parameter Set" are included.
 
 * Climate Chamber - reads and writes parameters to test the DUT in simulated extreme conditions and includes the following LLCs: "OnOff", "Temperature Setpoint", "Temperature Actual Value", "Error". Optionally, "Humidity Setpoint", "Humidity Actual Value", "Temperature/Humidity Gradients", "Temperature/Humidity Limits" are included.
 
@@ -72,14 +78,17 @@ Below is a list of channels created by each LLC:
 * Current Setpoint - Current.ch%d.SP
 * Current Limit - CurrentMax.ch%d.SP, CurrentMin.ch%d.SP
 * Current Gradient - CurrentGrad.ch%d.SP
+* Current Nominal Value - CurrentNominal.ch%d.AV
 * Voltage Actual Value - Voltage.ch%d.AV
 * Voltage Setpoint - Voltage.ch%d.SP
 * Voltage Limit - VoltageMax.ch%d.SP, VoltageMin.ch%d.SP
 * Voltage Gradient - VoltageGrad.ch%d.SP
+* Voltage Nominal Value - VoltageNominal.ch%d.AV
 * Power Actual Value - Power.ch%d.AV
 * Power Setpoint - Power.ch%d.SP
 * Power Limit - PowerMax.ch%d.SP, PowerMin.ch%d.SP
 * Power Gradient - PowerGrad.ch%d.SP
+* Power Nominal Value - PowerNominal.ch%d.AV
 * Temperature Actual Value - Temperature.ch%d.AV
 * Temperature Setpoint - Temperature.ch%d.SP
 * Temperature Limit - TemperatureMax.ch%d.SP, TemperatureMin.ch%d.SP
@@ -96,14 +105,18 @@ Below is a list of channels created by each LLC:
 * Flow Setpoint - Flow.ch%d.SP
 * Flow Limit - FlowMax.ch%d.SP, FlowMin.ch%d.SP
 * Flow Gradient - FlowGrad.ch%d.SP
-* OnOff - OnOff.ACT
+* OnOff - OnOff.ACT, OnOff.STS
+* OnOff Channels - OnOff.ch%d.ACT, OnOff.ch%d.STS
 * OutputEnable - OutputEnable.ch%d.ACT, OutputEnable.ch%d.STS
 * ControlMode - ControlMode.ch%d.CTL, ControlMode.ch%d.STS
 * ParallelMode - ParallelMode.ACT, ParallelMode.STS
 * IsoMeasurement - IsoMeasurement.ACT, IsoMeasurement.STS
 * ParameterSet - ParameterSet.ch%d.CTL, ParameterSet.ch%d.STS
 * Error - ErrorAcknowledge.ACT, Error.STS, Watchdog.STS
-* ErrorChannels - Error.ch%d.STS
+* ErrorChannels - ErrorAcknowledge.ch%d.ACT, Error.ch%d.STS
+* Init Channels - Init.ch%d.ACT, Init.ch%d.STS
+* Overload Counter Channels - OverloadCounter.ch%d.AV
+* Parallel Mode Channels - ParallelMode.ch%d.ACT, ParallelMode.ch%d.STS, NoOfSecondaryChs.ch%d.CTL, SecondaryCh01.ch%d.CTL, SecondaryCh02.ch%d.CTL, SecondaryCh03.ch%d.CTL, SecondaryCh04.ch%d.CTL, SecondaryCh05.ch%d.CTL
 
 Note: The %d in the channel name will be replaced with a number from 1 to X depending on how many channels are created from the for loops. For example, the channel name Current.ch%d.AV will be printed as Current.ch1.AV, Current.ch2.AV, and so on.
 Also to the channel name the instance name of the plugin is automatically added before, so if the instance name is "BLS_Instance" the complete channel name will be "BLS_Instance_Current.ch1.AV". In PAtools you will use the channel name "_Current.ch1.AV".
