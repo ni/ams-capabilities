@@ -1,5 +1,5 @@
 # Templates Overview
-The BLS plugin templates are all based on the same project. They differ in using different capabilities.
+The AMS plugin templates are all based on the same project. They differ in using different capabilities.
 A plugin will run on a PXI Target: The plugin can be loaded multiple times as different instances. When a plugin is loaded a json string is used to configure the plugin.
 
 
@@ -10,25 +10,25 @@ A plugin will run on a PXI Target: The plugin can be loaded multiple times as di
 1. Install LabView
 1. Install the ADAS Replay and HIL AD Development Suite for LabVIEW (if not installed together with PAtools).
 1. Install JKI JSON, Structure Error Handler and JSONtext library from VI Package Manager.
-1. Download and install the [ni-bls-capabilities package](ni-bls-capabilities_1.0.0.1_windows_x64.nipkg)
+1. Download and install the [ni-ams-capabilities package](ni-ams-capabilities_1.0.0.1_windows_x64.nipkg)
 
 ## Setup your project
-Create a new LabView project by using a BLS plugin Template.
+Create a new LabView project by using a AMS plugin Template.
 The installation of the package will also deliver the needed PAtools modules and example plugins. They are located under:
-C:\Program Files\National Instruments\BLS plugin\PAtools
+C:\Program Files\National Instruments\AMS plugin\PAtools
 
 ## Adapt the plugin to your needs
-Since the structure is the same for each of the BLS templates, it is explained here using the Power Supply Template as an example:
+Since the structure is the same for each of the AMS templates, it is explained here using the Power Supply Template as an example:
 
-![BLS Power Supply Template](docs/img/BLS-Power-Supply.png)
+![AMS Power Supply Template](docs/img/AMS-Power-Supply.png)
 
 The plugin will run under a PXI, therefore it is within a RT PXI Target.
-In the folder "Tests", one can use the "Test BLS Power Supply.vi" and "Test BLS Power Supply Temlate UI.vi" in order to check if the plugin does run on the PXI target.
+In the folder "Tests", one can use the "Test AMS Power Supply.vi" and "Test AMS Power Supply Template UI.vi" in order to check if the plugin does run on the PXI target.
 The "Create Config Json.vi" cannot be executed on the PXI target, therefore it has to be moved up to "My Computer" in order to execute it. It will create the json string needed to configure the plugin. Since it uses VIs from the class, it needs to be moved back in the Tests folder afterwards, otherwise LabView will give an error.
-The main work is done in the "BLS Power Supply Template.lvclass". In principal you only need to adapt these files:
+The main work is done in the "AMS Power Supply Template.lvclass". In principal you only need to adapt these files:
 
 * "Configuration Params.ctl": Change, add or remove parameters you need in your configuration
-* "BLS Power Supply Template.ctl": Add parameters, controls, etc. you need within your class in different VIs. Also here are the capabilities added. You can add further LLCs if needed. For your plugin you will probably use driver classes, you can also add them here.
+* "AMS Power Supply Template.ctl": Add parameters, controls, etc. you need within your class in different VIs. Also here are the capabilities added. You can add further LLCs if needed. For your plugin you will probably use driver classes, you can also add them here.
 * "Create Data Channels.vi": In this VI the channels are created which are needed to communicate to other systems, e.g. PAtools. If you added further LLCs you need to add the Initialize methods of them here. This VI is executed once by the plugin at start.
 * "Exit Initialize (User).vi": Make calls to initialize your device and also fill the "Create Asset Json.vi" with correct inputs, by e.g. using driver calls to get the needed information. This VI is executed once by the plugin at start.
 * "Cleanup (User).vi": Make calls to deinitialize your device correctly, e.g., turning it off.
@@ -38,7 +38,7 @@ The main work is done in the "BLS Power Supply Template.lvclass". In principal y
 ## Testing without PAtools
 
 ### Within the Project
-* Execute "Test BLS Power Supply.vi" and "Test BLS Power Supply Temlate UI.vi"
+* Execute "Test AMS Power Supply.vi" and "Test AMS Power Supply Template UI.vi"
 
 ### With the AdasReplayHilApplication project
 * Create the config json using the "Create Config Json.vi"
@@ -46,14 +46,14 @@ The main work is done in the "BLS Power Supply Template.lvclass". In principal y
     - Build steps
         - Expand "RT PXI Target"
         - Expand "Build Specifications"
-        - Right-click "BLS Power Supply Template" and select "Build"
+        - Right-click "AMS Power Supply Template" and select "Build"
 * Make sure the plugin is on your PXI in the folder "/usr/lib/x86_64-linux-gnu/ni-evo-engine/plugins", otherwise copy the .lvlibp and give file permission
 * Restart the PXI
 * Open the "AdasReplayHilApplication.lvproj" (C:\Program Files\National Instruments\ADAS Replay HIL\App)
 * Execute the "Example grpc CLient.vi"
 * Type in the PXI ip in "Application grpc Server"
 * Change to tab "Dynamic Workflow"
-* Enter your Plugin Name, e.g. "BLS Power Supply Template", an Instance Name of your choice and copy the created config json string into "Node Confige in Json"
+* Enter your Plugin Name, e.g. "AMS Power Supply Template", an Instance Name of your choice and copy the created config json string into "Node Confige in Json"
 * Press "Load Node by Json"
 * Switch main tab to "Node"
 * Press "Refresh Node Status"
