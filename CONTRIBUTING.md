@@ -27,13 +27,13 @@ Right now for the creation of channels only these datatypes are supported:
 Note: UINT64, Timestamps and Single are not supported by PAtools
 
 # Adding a new LLC
-:cactus: When working with a team on Capabilties, be strategic when updating the AMS Capabilities project file because it will not be trivial to merge.
+:cactus: When working with a team on Capabilties, be strategic when updating the BLS Capabilities project file because it will not be trivial to merge.
 
 Once you know that you have a new generic capability LLC to implement, you're going to need to create a new folder and class, deriving from the Capability.lvclass or a parent class, e.g. Setpoint.lvclass or Actual Value.lvclass.
 
 ## Create the Class
 
-1. Open the AMS Capabilities project.
+1. Open the BLS Capabilities project.
 1. Right-click the "Low Level Capabilities" folder or a matching subfolder (e.g. "Current").
 1. Select New->Class.
 1. Name your Capability.
@@ -90,13 +90,13 @@ Therefore do:
 
 # Adding a new HLC
 
-:cactus: When working with a team on Capabilties, be strategic when updating the AMS Capabilities project file because it will not be trivial to merge.
+:cactus: When working with a team on Capabilties, be strategic when updating the BLS Capabilities project file because it will not be trivial to merge.
 
 If you want to create a new High Level Capability, e.g. a "Power Supply", you're going to need to create a new folder and class, deriving from the Capability.lvclass.
 
 ## Create the Class
 
-1. Open the AMS Capabilities project.
+1. Open the BLS Capabilities project.
 1. Right-click the "High Level Capabilities" folder.
 1. Select New->Class.
 1. Name your Capability.
@@ -156,5 +156,5 @@ Note: If you have polymorphic VIs only add the polymorphy VI to the palette and 
 When you are done creating a capability, also add the description on the README.md in order to describe what the capability is good for and what it should do / be used for inside a driver
 
 # Not yet in use
-- AMS capabilities.dragon - Will provide dependencies for this project in the future
+- BLS capabilities.dragon - Will provide dependencies for this project in the future
 - lvaddoninfo.json - Will be used to create a package out of the project and versioning it
