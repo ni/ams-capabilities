@@ -1,15 +1,15 @@
 # PAtools Integration
 
-This document describes the process of integrating a new BLS plugin/Driver in PAtools using the Template_PowerSupply_BLS module as an example. Other Templates are quite similar. If there are any additional steps, they will be described in the PAtools Integration README of the specific template.
-This document assumes you have the LabView side of the BLS plugin ready using [capabilities](https://github.com/ni/bls-capabilities) and the PXI target has the PAtools runtime installed. 
+This document describes the process of integrating a new AMS plugin/Driver in PAtools using the Template_PowerSupply_AMS module as an example. Other Templates are quite similar. If there are any additional steps, they will be described in the PAtools Integration README of the specific template.
+This document assumes you have the LabView side of the AMS plugin ready using [capabilities](https://github.com/ni/ams-capabilities) and the PXI target has the PAtools runtime installed. 
 
 # Create PAtools driver
 
-1. If you do not already have the Template_PowerSupply_BLS module in your database, import it:
+1. If you do not already have the Template_PowerSupply_AMS module in your database, import it:
 
     ![Module Import](docs/img/Module-Import.png)
 
-    ![Import BLS PowerSupply Template ](docs/img/Import-BLS-PowerSupply-Plugin-Template.png)
+    ![Import AMS PowerSupply Template ](docs/img/Import-AMS-PowerSupply-Plugin-Template.png)
 
 2. Right-click on the module and select "Duplicate Module...".
 
@@ -20,7 +20,7 @@ This document assumes you have the LabView side of the BLS plugin ready using [c
     ![Duplication](docs/img/Duplication.png)
 
     * Target Path: Adapt as you like
-    * Find*: enter "Template_PowerSupply_BLS"
+    * Find*: enter "Template_PowerSupply_AMS"
     * Replace*: enter your device name / a module name, e.g. "NI_RMX412X"
     
     Press "Duplicate". When finished, the module "NI_RMX412X_(Module_NI_RMX412X)" appears in the path you selected
@@ -46,14 +46,14 @@ This document assumes you have the LabView side of the BLS plugin ready using [c
 
     4.5 In the Initialization of Variables group "NI_RMX412X_Config":
 
-    * BLS Plugin Address: Enter the address of the device, could be an IP address
-    * BLS Instance Name: Give an unique Instance Name under which the plugin should be loaded
-    * BLS Plugin Execution Frequency: Select the Frequency with which you want to execute the plugin in Hz
-    * BLS Plugin Name: Name of the plugin, e.g. "BLS Power Supply Template" 
-    * BLS Pugin Version: Enter the plugin version, e.g. "1.0"
+    * AMS Plugin Address: Enter the address of the device, could be an IP address
+    * AMS Instance Name: Give an unique Instance Name under which the plugin should be loaded
+    * AMS Plugin Execution Frequency: Select the Frequency with which you want to execute the plugin in Hz
+    * AMS Plugin Name: Name of the plugin, e.g. "AMS Power Supply Template" 
+    * AMS Pugin Version: Enter the plugin version, e.g. "1.0"
     * Timeout for initializing: Give a value (in seconds) for how long to wait until a timeout is triggered
 
-    Note: The name of the lvlibp is e.g. "BLS Power Supply Template.1.0.lvlibp". So the front part is the plugin name, followed by the version. Only enter the name without the version and ending to the BLS Plugin Name and also just write the version on the BLS Plugin Version.
+    Note: The name of the lvlibp is e.g. "AMS Power Supply Template.1.0.lvlibp". So the front part is the plugin name, followed by the version. Only enter the name without the version and ending to the AMS Plugin Name and also just write the version on the AMS Plugin Version.
 
     4.6 In the Initialization of Variables group "NI_RMX412X.ch01" (NI_RMX412X_config/NI_RMX412x.ch01) adapt the initialization values to that of your device
 
@@ -90,7 +90,7 @@ This document assumes you have the LabView side of the BLS plugin ready using [c
 
     * Column 1: Value
     * Column 2: Name
-    * Column 3: Data type (CV_BLS_INT8,...)
+    * Column 3: Data type (CV_AMS_INT8,...)
     * Column 4: Status of the linking of the channels (-1: not found, 0: nothing done yet, 1: opened, 2: linked)
 
     6.2 Consumers:
@@ -101,7 +101,7 @@ This document assumes you have the LabView side of the BLS plugin ready using [c
 
     * Column 1: Value
     * Column 2: Name
-    * Column 3: Data type (CV_BLS_INT8,...)
+    * Column 3: Data type (CV_AMS_INT8,...)
     * Column 4: Status of the linking of the channels (-1: not found, 1: opened, 2: linked)
     * Column 5: Default Value (mostly same variable as Value, but could also enter hard coded values here)
 

@@ -1,35 +1,35 @@
-# BLS Capabilities
+# AMS Capabilities
 
-A capability in Battery Lab Software (BLS) is a feature that any device (Cycler, Chiller, Chamber, Power Supply, E-Load, etc.) can choose to provide. Each capability is creating one or multiple channels that are used to communicate between systems, e.g., LabView and PAtools. They provide methods for Initialize, Close, Read and Write.
+A capability in Battery Lab Software (AMS) is a feature that any device (Cycler, Chiller, Chamber, Power Supply, E-Load, etc.) can choose to provide. Each capability is creating one or multiple channels that are used to communicate between systems, e.g., LabView and PAtools. They provide methods for Initialize, Close, Read and Write.
 
-This repo contains the various implementations for BLS-compatible capabilities that can be used to accelerate the creation of a BLS Plugin. Include an instance of these classes in your BLS Plugin and it will handle the underlying channel data communication.
+This repo contains the various implementations for AMS-compatible capabilities that can be used to accelerate the creation of a AMS Plugin. Include an instance of these classes in your AMS Plugin and it will handle the underlying channel data communication.
 
 # Requirements
-Requirements to use the BLS Capabilities and BLS Templates:
+Requirements to use the AMS Capabilities and AMS Templates:
 
-* LabView2023/LabView2024
+* LabView2024
 * Battery Lab Software Plug-In Developer Toolkit (part of PAtools installer)
 * JKI JSON, Structure Error Handler and JSONtext library from VI Package Manager.
 
-# BLS plugins repositories compatible with PAtools
+# AMS plugins repositories compatible with PAtools
 
-Here is a list of known bls plugins used with PAtools:
+Here is a list of known ams plugins used with PAtools:
 
-* [BLS Power Supply RMX-412x-plugin](https://github.com/ni/bls-power-supply-RMX-412x-plugin)
-* [BLS VCOM](https://github.com/ni/bls-vcom/)
+* [AMS Power Supply RMX-412x-plugin](https://github.com/ni/ams-power-supply-RMX-412x-plugin)
+* [AMS VCOM](https://github.com/ni/ams-vcom/)
 
 Templates:
 
-* [BLS Cycler Plugin Template](https://github.com/ni/bls-cycler-plugin-template)
-* [BLS Power Supply Plugin Template](https://github.com/ni/bls-power-supply-plugin-template)
-* [BLS Climate Chamber Plugin Template](https://github.com/ni/bls-climate-chamber-plugin-template)
-* [BLS Chiller Plugin Template](https://github.com/ni/bls-chiller-plugin-template)
+* [AMS Cycler Plugin Template](https://github.com/ni/ams-cycler-plugin-template)
+* [AMS Power Supply Plugin Template](https://github.com/ni/ams-power-supply-plugin-template)
+* [AMS Climate Chamber Plugin Template](https://github.com/ni/ams-climate-chamber-plugin-template)
+* [AMS Chiller Plugin Template](https://github.com/ni/ams-chiller-plugin-template)
 
 Note: Add further repositories via a pull request.
 
 # Capabilities
 
-We categorize capabilties into "Low Level Capabilties" (LLC) and "High Level Capabilities" (HLC). LLCs are intended to be possibly used with any device type, not just a Cycler (for example).
+We categorize capabilities into "Low Level Capabilities" (LLC) and "High Level Capabilities" (HLC). LLCs are intended to be possibly used with any device type, not just a Cycler (for example).
 HLCs are used to reflect device types, e.g. Cyclers, Climate Chambers, etc. They are built using LLCs to define a standard device that is compatible with, e.g., PAtools.
 
 ## Parents
@@ -106,11 +106,11 @@ Below is a list of channels created by each LLC:
 * ErrorChannels - Error.ch%d.STS
 
 Note: The %d in the channel name will be replaced with a number from 1 to X depending on how many channels are created from the for loops. For example, the channel name Current.ch%d.AV will be printed as Current.ch1.AV, Current.ch2.AV, and so on.
-Also to the channel name the instance name of the plugin is automatically added before, so if the instance name is "BLS_Instance" the complete channel name will be "BLS_Instance_Current.ch1.AV". In PAtools you will use the channel name "_Current.ch1.AV".
+Also to the channel name the instance name of the plugin is automatically added before, so if the instance name is "AMS_Instance" the complete channel name will be "AMS_Instance_Current.ch1.AV". In PAtools you will use the channel name "_Current.ch1.AV".
 
 # Helper VI
 
-* Create Asset JSON.vi: This vi can be used in BLS plugins in order to write asset information. Required: asset name and serial number. Optional: vendor name, firmware version, model name, model number and hardware version. Use driver calls to get as much information about the asset as you can, or use constants.
+* Create Asset JSON.vi: This vi can be used in AMS plugins in order to write asset information. Required: asset name and serial number. Optional: vendor name, firmware version, model name, model number and hardware version. Use driver calls to get as much information about the asset as you can, or use constants.
 
 # Abbreviations
 
@@ -129,12 +129,12 @@ Take a look at the [CONTRIBUTING.md](CONTRIBUTING.md)
 
 # Creating a plugin with Templates
 
-This project only provides the capabilities and some helper VIs. To create a plugin, use a BLS-Template together with this project. [Here](BLSTEMPLATES.md) it is described how to create your own plugin.
+This project only provides the capabilities and some helper VIs. To create a plugin, use a AMS-Template together with this project. [Here](AMSTEMPLATES.md) it is described how to create your own plugin.
 
-* [BLS Cycler Plugin Template](https://github.com/ni/bls-cycler-plugin-template)
-* [BLS Power Supply Plugin Template](https://github.com/ni/bls-power-supply-plugin-template)
-* [BLS Climate Chamber Plugin Template](https://github.com/ni/bls-climate-chamber-plugin-template)
-* [BLS Chiller Plugin Template](https://github.com/ni/bls-chiller-plugin-template)
+* [AMS Cycler Plugin Template](https://github.com/ni/ams-cycler-plugin-template)
+* [AMS Power Supply Plugin Template](https://github.com/ni/ams-power-supply-plugin-template)
+* [AMS Climate Chamber Plugin Template](https://github.com/ni/ams-climate-chamber-plugin-template)
+* [AMS Chiller Plugin Template](https://github.com/ni/ams-chiller-plugin-template)
 
 # Add Palette
 

@@ -1,5 +1,5 @@
 {
-    "AddonName": "ni-bls-capabilities",
+    "AddonName": "ni-ams-capabilities",
     "ApiVersion": "v1",
-    "MinimumSupportedLVVersion": "23.0"
+    "MinimumSupportedLVVersion": "24.0"
 }
