@@ -13,7 +13,7 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="src" Type="Folder" URL="..">
+		<Item Name="Capabilities" Type="Folder" URL="..">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
 		<Item Name="Package Dependencies" Type="IIO Ladder Diagram">
@@ -36,10 +36,10 @@
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 			</Item>
-			<Item Name="Tag Wrapper.lvlib" Type="Library" URL="../../../adas-replay-hil-internal/source/Channels/Tag Wrapper/Tag Wrapper.lvlib"/>
 			<Item Name="AdasHilServices.dll" Type="Document" URL="AdasHilServices.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Tag Wrapper.lvlib" Type="Library" URL="/D/git/adas-replay-hil-internal/source/Channels/Tag Wrapper/Tag Wrapper.lvlib"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
