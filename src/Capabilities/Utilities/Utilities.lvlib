@@ -13,6 +13,7 @@
 	<Item Name="Create Channel Name Cluster.vi" Type="VI" URL="../Create Channel Name Cluster.vi"/>
 	<Item Name="Create Channel Name.vi" Type="VI" URL="../Create Channel Name.vi"/>
 	<Item Name="Determine Cluster Size.vi" Type="VI" URL="../Determine Cluster Size.vi"/>
+	<Item Name="Enhance Json Config with Channels.vi" Type="VI" URL="../Enhance Json Config with Channels.vi"/>
 	<Item Name="Open Consumer Tag Cluster.vi" Type="VI" URL="../Open Consumer Tag Cluster.vi"/>
 	<Item Name="Open Producer Tag Cluster.vi" Type="VI" URL="../Open Producer Tag Cluster.vi"/>
 </Library>

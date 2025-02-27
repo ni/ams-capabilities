@@ -1,6 +1,6 @@
 # PAtools Integration
 
-This document describes the process of integrating a new AMS plugin/Driver in PAtools using the Template_PowerSupply_AMS module as an example. Other Templates are quite similar. If there are any additional steps, they will be described in the PAtools Integration README of the specific template.
+This document describes the process of integrating a new AMS plugin/Driver in PAtools using the Template_AMS_PowerSupply module as an example. Other Templates are quite similar. If there are any additional steps, they will be described in the PAtools Integration README of the specific template.
 This document assumes you have the LabView side of the AMS plugin ready using [capabilities](https://github.com/ni/ams-capabilities) and the PXI target has the PAtools runtime installed. 
 
 # Create PAtools driver
@@ -50,7 +50,7 @@ This document assumes you have the LabView side of the AMS plugin ready using [c
     * AMS Instance Name: Give an unique Instance Name under which the plugin should be loaded
     * AMS Plugin Execution Frequency: Select the Frequency with which you want to execute the plugin in Hz
     * AMS Plugin Name: Name of the plugin, e.g. "AMS Power Supply Template" 
-    * AMS Pugin Version: Enter the plugin version, e.g. "1.0"
+    * AMS Plugin Version: Enter the plugin version, e.g. "1.0"
     * Timeout for initializing: Give a value (in seconds) for how long to wait until a timeout is triggered
 
     Note: The name of the lvlibp is e.g. "AMS Power Supply Template.1.0.lvlibp". So the front part is the plugin name, followed by the version. Only enter the name without the version and ending to the AMS Plugin Name and also just write the version on the AMS Plugin Version.
