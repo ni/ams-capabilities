@@ -6,11 +6,10 @@ A plugin will run on a PXI Target: The plugin can be loaded multiple times as di
 # Creating your own plugin
 
 ## Install requirements
-1. Install PAtools (only needed if you will use the template with PAtools)
+1. Install PAtools with ADD-ON Battery Lab Software Plug-In Developer Toolkit
 1. Install LabView
 1. Install the ADAS Replay and HIL AD Development Suite for LabVIEW (if not installed together with PAtools).
 1. Install JKI JSON, Structure Error Handler and JSONtext library from VI Package Manager.
-1. Download and install the [ni-bls-capabilities package](ni-bls-capabilities_1.0.0.1_windows_x64.nipkg)
 
 ## Setup your project
 Create a new LabView project by using a AMS plugin Template.
