@@ -12,9 +12,12 @@ These basic requirements should enforce meaningful consistency across capabiliti
 
 # Capabilities
 
-We categorize Capabilties in "Low Level Capabilties" (LLC) and "High Level Capabilities" (HLC). LLCs are intended to be used with any kind of device, not just a Cycler (for example).
-HLC are used to reflect device types, e.g. Cyclers, Climate Chambers, etc. They are build up using LLCs to define a standard device which is compatible with e.g. PAtools.
+We categorize Capabilities in "Low Level Capabilities" (LLC) and "High Level Capabilities" (HLC). LLCs are intended to be used with any kind of device, not just a Cycler (for example).
+HLC are used to reflect device types, e.g. Cyclers, Climate Chambers, etc. They are either build up using LLCs or using Clusters to define a standard device which is compatible with e.g. PAtools.
 LLCs might be derived using parent classes in order to reduce implementation work and increase maintainability.
+
+# Cluster vs non Cluster
+The Cluster implementation is more performant, depending on amount of channels used. Using multiple channels the Cluster variant is recommended, the "non Cluster" implementation is there for compatibility, since Cluster useage was added with 25Q4.
 
 # Datatypes
 
@@ -26,12 +29,29 @@ Right now for the creation of channels only these datatypes are supported:
 
 Note: UINT64, Timestamps and Single are not supported by PAtools
 
-# Adding a new LLC
-:cactus: When working with a team on Capabilties, be strategic when updating the AMS Capabilities project file because it will not be trivial to merge.
+# Cluster Implementation
+## Copy existings HLCs if not all channels are needed or there is a need to add further channels for your own usecase
+If the HLC provides channels you do not need for your implementation or channels are missing, you can copy the class, rename it and adapt the VIs. For example with the Cycler Cluster.lvclass
+
+1. Make sure to close all LabView programs
+1. Copy the "Cycler Cluster" folder from Capabilities -> High Level Capabilities
+1. Rename the folder, e.g. to "Cycler XY"
+1. Open "Cycler Cluster.lvclass" and rename it to "Cycler XY"
+1. Open the "Cycler XY.lvclass" Class Properties and press "Edit Icon..." - adapt Line text 1 to e.g. "Cycler XY" and/or adapt the colours to your preference
+1. Open "Cycler XY.ctl" and adapt the Clusters to your need, e.g. removing "IsoMeasurement.ACT" and "IsoMeasurement.STS" from Consumer/Producer Control or adding variables to the channels.
+1. Open all other VIs and make sure that they are not broken, depending on your adaptions you most likely need to adapt the "Producer Ch.ctl", "Producer Control.ctl" and the "Read.vi" Controls/Channels indicators/outputs
+1. In your plugin template you can now exchange your new class with the Cycler Cluster.lvclass
+
+## Committing new HLCs
+If you feel like your created HLC is something other users would benefit from you can add them to this project by creating a pull request. Describe what your added HLC is good for and why you think it is a reoccuring use case.
+
+# Non Cluster Implementation
+## Adding a new LLC
+:cactus: When working with a team on Capabilities, be strategic when updating the AMS Capabilities project file because it will not be trivial to merge.
 
 Once you know that you have a new generic capability LLC to implement, you're going to need to create a new folder and class, deriving from the Capability.lvclass or a parent class, e.g. Setpoint.lvclass or Actual Value.lvclass.
 
-## Create the Class
+### Create the Class
 
 1. Open the AMS Capabilities project.
 1. Right-click the "Low Level Capabilities" folder or a matching subfolder (e.g. "Current").
@@ -43,7 +63,7 @@ Your configuration should e.g. look like this if you are creating a "Resistance 
 
 ![alt text](docs/img/new-capability.png)
 
-## Edit Icon
+### Edit Icon
 After creating the class, edit the class Icon. This allows to later apply the same icon layout to all VIs inside the class:
 1. Right-click the class -> Properties -> General Settings
 1. Press Button "Edit Icon.."
@@ -52,7 +72,7 @@ After creating the class, edit the class Icon. This allows to later apply the sa
 
 ![alt text](docs/img/class-edit-icon.png)
 
-## Add Data and Overrides
+### Add Data and Overrides
 
 1. Open the class private data.
 1. Right-click your class in the project.
@@ -62,18 +82,18 @@ In these two overrides, instantiate and close the channels. Use other capabiliti
 
 Depending on if you use the Capabilities.lvclass or an other parent class, you do the following:
 
-### Capabilities.lvclass
+#### Capabilities.lvclass
 1. Copy/Paste an array of Channel and single references from another capability (if both are usefull).
 1. Rename the channel array / single.
 
-### Parent - e.g. Actual Value.lvclass
+#### Parent - e.g. Actual Value.lvclass
 1. Also create Overrides for AV Write Array and AV Write Single
 1. Open the Block Diagram of the Initialize.vi
 1. Rename the ChannelName String to "not in use"
 1. Disconnect it from the parent VI
 1. Add a constant string to the ChannelName Input instead and configure the Name to be "ActualValue.ch%d.AV", where you replace the "ActualValue" with the Capabilitiy you are creating, e.g. Current, Voltage or Temperature
 
-## Add VIs to palette
+### Add VIs to palette
 When you are done creating the VIs and applying the Style Guide, also create a new dir.mnu to add the VIs to the LabView palette. 
 :cactus: Save everything and close/re-open LabVIEW for this. It's not the most stable tool.
 Therefore do:
@@ -88,13 +108,13 @@ Therefore do:
 1. Save Changes
 
 
-# Adding a new HLC
+## Adding a new HLC
 
-:cactus: When working with a team on Capabilties, be strategic when updating the AMS Capabilities project file because it will not be trivial to merge.
+:cactus: When working with a team on Capabilities, be strategic when updating the AMS Capabilities project file because it will not be trivial to merge.
 
 If you want to create a new High Level Capability, e.g. a "Power Supply", you're going to need to create a new folder and class, deriving from the Capability.lvclass.
 
-## Create the Class
+### Create the Class
 
 1. Open the AMS Capabilities project.
 1. Right-click the "High Level Capabilities" folder.
@@ -106,14 +126,14 @@ Your configuration should e.g. look like this if you are creating a "Power Suppl
 
 ![alt text](docs/img/new-HLC.png)
 
-## Edit Icon
+### Edit Icon
 After creating the class, edit the class Icon. This allows to later apply the same icon layout to all VIs inside the class:
 1. Right-click the class -> Properties -> General Settings
 1. Press Button "Edit Icon.."
 1. Select register "Icon Text"
 1. Enter in "Line 1 text" a fitting text which tells what class it is, e.g. "POWER S"
 
-## Add LLCs
+### Add LLCs
 Now add all LLCs which you want to use in your HLC and therefore making them a requirement. In order to do so:
 1. Open the HLC class control VI, e.g. Power Supply.ctl
 1. Drag and Drop all LLC lvclass Objects you want to use inside the "Cluster of class private data"
@@ -122,7 +142,7 @@ e.g. for a HLC called "Device", which uses the LLCs "Current Actual Value", "Cur
 
 ![alt text](docs/img/HLC-CTL.png)
 
-## Add Overrides
+### Add Overrides
 
 1. Open the class private data.
 1. Right-click your class in the project.
@@ -131,13 +151,13 @@ e.g. for a HLC called "Device", which uses the LLCs "Current Actual Value", "Cur
 In these two overrides, instantiate and close the channels. Use the Initialize and Close VIs of the LLCs to do so by unbundling the HLC Object, e.g. for a HLC called "Device", which uses the LLCs "Current Actual Value", "Current Setpoint", "Voltage Actual Value" and "Voltage Setpoint" it would look like that:
 ![alt text](docs/img/HLC-Init.png)
 
-## Add Data Accessors
+### Add Data Accessors
 For the capabilities you are using you need to create Data Accessors, depending on how your LLC looks like, you need to provide a Write or a Read VI. If you have Read/Writes for Single and Arrays, also provide polymorphic VIs. E.g. for the "Current Setpoint" LLC you need to create a "Current Read Array.vi", a "Current Read Single.vi" and the polymorphic "Current Read.vi" in your HLC.
 The "Current Read Array.vi" would look like that:
 
 ![alt text](docs/img/HLC-Current-Read.png)
 
-## Add VIs to palette
+### Add VIs to palette
 When you are done creating all VIs and applying the Style Guide, also create a new dir.mnu to add the VIs to the LabView palette. 
 :cactus: Save everything and close/re-open LabVIEW for this. It's not the most stable tool.
 Therefore do:
@@ -152,7 +172,7 @@ Therefore do:
 1. Save Changes
 Note: If you have polymorphic VIs only add the polymorphy VI to the palette and not the once it contains
 
-# After adding a Capability
+## After adding a Capability
 When you are done creating a capability, also add the description on the README.md in order to describe what the capability is good for and what it should do / be used for inside a driver
 
 # Not yet in use
