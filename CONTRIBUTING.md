@@ -12,12 +12,12 @@ These basic requirements should enforce meaningful consistency across capabiliti
 
 # Capabilities
 
-We categorize Capabilities in "Low Level Capabilities" (LLC) and "High Level Capabilities" (HLC). LLCs are intended to be used with any kind of device, not just a Cycler (for example).
+We categorize Capabilities in "Low Level Capabilities" (LLC) and "High Level Capabilities" (HLC). LLCs are intended to be used with any kind of device, not just a Power Supply (for example).
 HLC are used to reflect device types, e.g. Cyclers, Climate Chambers, etc. They are either build up using LLCs or using Clusters to define a standard device which is compatible with e.g. PAtools.
 LLCs might be derived using parent classes in order to reduce implementation work and increase maintainability.
 
 # Cluster vs non Cluster
-The Cluster implementation is more performant, depending on amount of channels used. Using multiple channels the Cluster variant is recommended, the "non Cluster" implementation is there for compatibility, since Cluster useage was added with 25Q4.
+The Cluster implementation is more performant, depending on amount of channels used. Using multiple channels the Cluster variant is recommended, the "non Cluster" implementation is there for compatibility, since Cluster usage was added with 25Q4.
 
 # Datatypes
 
@@ -30,17 +30,36 @@ Right now for the creation of channels only these datatypes are supported:
 Note: UINT64, Timestamps and Single are not supported by PAtools
 
 # Cluster Implementation
-## Copy existings HLCs if not all channels are needed or there is a need to add further channels for your own usecase
-If the HLC provides channels you do not need for your implementation or channels are missing, you can copy the class, rename it and adapt the VIs. For example with the Cycler Cluster.lvclass
-
-1. Make sure to close all LabView programs
-1. Copy the "Cycler Cluster" folder from Capabilities -> High Level Capabilities
-1. Rename the folder, e.g. to "Cycler XY"
-1. Open "Cycler Cluster.lvclass" and rename it to "Cycler XY"
-1. Open the "Cycler XY.lvclass" Class Properties and press "Edit Icon..." - adapt Line text 1 to e.g. "Cycler XY" and/or adapt the colours to your preference
-1. Open "Cycler XY.ctl" and adapt the Clusters to your need, e.g. removing "IsoMeasurement.ACT" and "IsoMeasurement.STS" from Consumer/Producer Control or adding variables to the channels.
-1. Open all other VIs and make sure that they are not broken, depending on your adaptions you most likely need to adapt the "Producer Ch.ctl", "Producer Control.ctl" and the "Read.vi" Controls/Channels indicators/outputs
-1. In your plugin template you can now exchange your new class with the Cycler Cluster.lvclass
+## Create new HLCs if not all channels are needed or there is a need to add further channels for your own usecase
+If the HLC provides channels you do not need for your implementation or channels are missing, you can create a new class and use the Cluster.lvclass (or one of the other HLC classes) as a parent. And add/remove channels you need. ToDos:
+1. Create a new class e.g. Test.lvclass in the RT PXI Target (If you created a new project from one of the templates ) 
+1. Select the parent class, which is one of the HLC Cluster classes (e.g. Power Supply Cluster.lvclass)
+1. Open the "Test.lvclass" Class Properties and press "Edit Icon..." - adapt Line text 1 to e.g. "Test" and/or adapt the colours to your preference
+1. Create a new Virtual Folder named "TypeDefs"
+1. Create a typedef for each Cluster you want to use as a channel. The standard templates have:
+* Consumer Control.ctl
+* Consumer Ch.ctl
+* Producer Control.ctl
+* Producer Ch.ctl
+1. Add the needed sub-channels you need by adding variables. If you need similar once as the HLC provides, you can copy the Clusters from the HLC class and adapt them. (Note: Only copy the clusters and not the whole typedef, since this would lead to conflicts. )
+1. Open the class ctl, e.g. Test.ctl
+* Add a reference for each typedef you created
+* Add a "Channels Amount" variable if one of your clusters will be used as an array / multiple times the same channel content
+* Add the typedefs you added
+* Convert typedefs you needs as an array to array and give them the name of the typedef
+* Reorder controls in the cluster (if you use the standard layout) to
+  * Consumer Control Ref
+  * Consumer Control
+  * Producer Control Ref
+  * Producer Control
+  * Channels Amount
+  * Consumer Ch Ref
+  * Consumer Ch
+  * Producer Ch Ref
+  * Producer Ch
+1. Add Overwrite VIs "Build Channel Cluster Array.vi", "Close.vi", "Initialize.vi", "Read.vi", "Write.vi". Open each of them and replace the parent VI with "sub vi content". If you have a different layout then the standard you might need to adapt these VIs further in order to have them functional. With the standard layout they do not need to be adapted further.
+1. Add Getters and Setters. For the standard layout you will probably need "Get Consumer Values.vi", "Get Producer Values.vi", "Set Producer Values.vi". You can add additional Getters and Setters for specific values if needed.
+1. In your plugin template you can now exchange your new "Test.lvclass" class with the "Power Supply Cluster.lvclass"
 
 ## Committing new HLCs
 If you feel like your created HLC is something other users would benefit from you can add them to this project by creating a pull request. Describe what your added HLC is good for and why you think it is a reoccuring use case.
@@ -83,7 +102,7 @@ In these two overrides, instantiate and close the channels. Use other capabiliti
 Depending on if you use the Capabilities.lvclass or an other parent class, you do the following:
 
 #### Capabilities.lvclass
-1. Copy/Paste an array of Channel and single references from another capability (if both are usefull).
+1. Copy/Paste an array of Channel and single references from another capability (if both are useful).
 1. Rename the channel array / single.
 
 #### Parent - e.g. Actual Value.lvclass
@@ -170,7 +189,7 @@ Therefore do:
   1. Select "Insert" > "VI(s)..."
   1. Select all the VIs and select current folder to add all or repeat the last step to add them separately.
 1. Save Changes
-Note: If you have polymorphic VIs only add the polymorphy VI to the palette and not the once it contains
+Note: If you have polymorphic VIs only add the polymorphic VI to the palette and not the once it contains
 
 ## After adding a Capability
 When you are done creating a capability, also add the description on the README.md in order to describe what the capability is good for and what it should do / be used for inside a driver
