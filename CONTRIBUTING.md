@@ -31,22 +31,30 @@ Note: UINT64, Timestamps and Single are not supported by PAtools
 
 # Cluster Implementation
 ## Create new HLCs if not all channels are needed or there is a need to add further channels for your own usecase
-If the HLC provides channels you do not need for your implementation or channels are missing, you can create a new class and use the Cluster.lvclass (or one of the other HLC classes) as a parent. And add/remove channels you need. ToDos:
-1. Create a new class e.g. Test.lvclass in the RT PXI Target (If you created a new project from one of the templates ) 
-1. Select the parent class, which is one of the HLC Cluster classes (e.g. Power Supply Cluster.lvclass)
-1. Open the "Test.lvclass" Class Properties and press "Edit Icon..." - adapt Line text 1 to e.g. "Test" and/or adapt the colours to your preference
+If the HLC provides channels you do not need for your implementation or channels are missing, you can create a new class and use the Cluster.lvclass (or one of the other HLC classes) as a parent. And add/remove channels you need. (When creating/adapting VIs use the style guide above). ToDos:
+1. Create a new class e.g. "Device Cluster.lvclass" in the RT PXI Target (If you created a new project from one of the templates ) or in My Computer (e.g. as part of the Capabilities project)
+1. Select the parent class, which is one of the HLC Cluster classes (e.g. Power Supply Cluster.lvclass) or the Cluster class directly:
+![Create new class](docs/img/Create_new_cluster_class.png)
+1. Open the "Device Cluster.lvclass" Class Properties and press "Edit Icon..." - adapt Line text 1 to e.g. "Device" and/or adapt the colours to your preference
+![Adapt Icon](docs/img/Adapt_Icon.png)
 1. Create a new Virtual Folder named "TypeDefs"
 1. Create a typedef for each Cluster you want to use as a channel. The standard templates have:
 * Consumer Control.ctl
 * Consumer Ch.ctl
 * Producer Control.ctl
 * Producer Ch.ctl
-1. Add the needed sub-channels you need by adding variables. If you need similar once as the HLC provides, you can copy the Clusters from the HLC class and adapt them. (Note: Only copy the clusters and not the whole typedef, since this would lead to conflicts. )
-1. Open the class ctl, e.g. Test.ctl
-* Add a reference for each typedef you created
-* Add a "Channels Amount" variable if one of your clusters will be used as an array / multiple times the same channel content
-* Add the typedefs you added
-* Convert typedefs you needs as an array to array and give them the name of the typedef
+![Class after type definition creations](docs/img/Class_after_Typdef_Creation.png)
+1. Add the needed sub-channels you need by adding variables to each typedef. If you need similar once as the HLC provides, you can copy the Clusters from the HLC class and adapt them. (Note: Only copy the clusters and not the whole typedef, since this would lead to conflicts. )
+![Example type definition "Producer Control.ctl"](docs/img/Producer_Control.png)
+1. Open the class ctl, e.g. Device Cluster.ctl
+* Add a reference for each typedef you created. Change the references to array, which will be used as multiple channels
+![Example type definition "Device Cluster.ctl" after reference creation](docs/img/Device_Cluster_ctl_After_Reference_creation.png)
+* Add a "Channels Amount" variable (U8 datatype recommended) if one of your clusters will be used as an array / multiple times the same channel content
+![Example type definition "Device Cluster.ctl" after reference creation](docs/img/Device_Cluster_ctl_After_Amount_of_Channels_creation.png)
+* Add the type defs you created
+![Example type definition "Device Cluster.ctl" after type definitions were added](docs/img/Device_Cluster_ctl_After_Typedefs_added.png)
+* Convert the corresponding type defs to the array references to array and give them the name of the typedef. Adapt the default values to your needs
+![Example type definition "Device Cluster.ctl" after type definition conversion](docs/imgDDevice_Cluster_ctl_After_Typedefs_converted.png)
 * Reorder controls in the cluster (if you use the standard layout) to
   * Consumer Control Ref
   * Consumer Control
@@ -57,9 +65,14 @@ If the HLC provides channels you do not need for your implementation or channels
   * Consumer Ch
   * Producer Ch Ref
   * Producer Ch
-1. Add Overwrite VIs "Build Channel Cluster Array.vi", "Close.vi", "Initialize.vi", "Read.vi", "Write.vi". Open each of them and replace the parent VI with "sub vi content". If you have a different layout then the standard you might need to adapt these VIs further in order to have them functional. With the standard layout they do not need to be adapted further.
-1. Add Getters and Setters. For the standard layout you will probably need "Get Consumer Values.vi", "Get Producer Values.vi", "Set Producer Values.vi". You can add additional Getters and Setters for specific values if needed.
-1. In your plugin template you can now exchange your new "Test.lvclass" class with the "Power Supply Cluster.lvclass"
+![Example type definition "Device Cluster.ctl" after completion](docs/img/Device_Cluster_ctl_After_Typedefs_completed.png)
+1. Add Overwrite VIs "Build Channel Cluster Array.vi", "Close.vi", "Initialize.vi", "Read.vi", "Write.vi". Replace the parent VI with "sub vi content". If you have a different layout then the standard you might need to adapt these VIs further in order to have them functional. With the standard layout they do not need to be adapted further.
+![Overwrite VI creation - example "Write.vi"](docs/img/Overwrite_VI_creation.png)
+1. Add Getters and Setters VI. For the standard layout you will probably need "Get Consumer Values.vi", "Get Producer Values.vi", "Set Producer Values.vi". You can add additional Getters and Setters for specific values if needed. Note: use the type definitions for the in/outputs so in case you later add / remove / adapt variables the change is reflected automatically in the Getters and Setters as well. You can optionally add additional getters/setters for specific channels/variables.
+![Example Getter creation "Get Consumer Values.vi"](docs/img/Getter_Creation.png)
+![Example Setter creation "Set Producer Values.vi"](docs/img/Getter_Creation.png)
+![Example Getter creation "Get OnOff.ACT.vi"](docs/img/Get_OnOff_ACT.png)
+1. In your plugin template you can now exchange your new "Device Cluster.lvclass" class with the used XY Cluster.lvclass (XY beeing PowerSupply, Cycler, etc.)
 
 ## Committing new HLCs
 If you feel like your created HLC is something other users would benefit from you can add them to this project by creating a pull request. Describe what your added HLC is good for and why you think it is a reoccuring use case.
