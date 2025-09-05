@@ -30,17 +30,26 @@ This document assumes you have the LabView side of the AMS plugin ready using [c
 4. Import the generated Json Configuration for PAtools to AMS group
 
     4.1 Open the AMS Plugin Control group "NI_RMX412x"
+
     4.2 Go to the overview by clicking on "NI_RMX412x" and import the Json Configuration using the Instance name "NI_RMX412x_InstanceName"
         ![Import Json Configuration](docs/img/Import_Json_Configuration.png)
+
     4.3 Adapt the Operation Group if needed, e.g. from 100Hz to 1Hz/10Hz/1000Hz
+
     4.4 Go back to the instance by clicking on "NI_RMX412x_InstanceName"
+
     4.5 Check if all channels have a fitting variable, if not adapt them to your needs. You can also deactivate channels you do not want to use (e.g. if you imported a Json with 32 channels, but later on just want to use 16).
         It is advised to use the same operation group for all entries. Boolean, INT8, UINT8, INT16, UINT16 and INT32 on LabView side are Integers on PAtools side. UINT32 and DOUBLES on LabView side are Floats on PAtools side.
+
     4.6 Switch from "Channels" to "Settings"
-        ![AMS Group Settings](docs/img/AMS_Group_Settings.png) 
+        ![AMS Group Settings](docs/img/AMS_Group_Settings.png)
+
     4.7 Check the Default Parameters and adapt them to your need. If you create variables for them make sure to add them to the initialization of variables group "NI_RMX412x_Config" in the module config folder and also in the "NI_RMX412x" variables group in the module system folder.
+
     4.8 Make sure that under "Default Parameters - Common"  for "Iteration Interval (s)" the variable "NI_RMX412x_Plugin_Execution_Interval.SP" is used
+
     4.9 Remove not anymore used config variables in the initialization of variables group "NI_RMX412x_Config" and in the "NI_RMX412x" variables group
+    
     4.10 Adapt the values in "NI_RMX412x_Config" to your needs, make sure you use a unique "AMS Plugin Instance Name"
 
 5. General Adaptions
