@@ -34,6 +34,15 @@ The main work is done in the "AMS Power Supply Template.lvclass". In principal y
 * "Destroy Data Channels.vi": Add "Close" methods of the capabilities you added. This VI is executed once by the plugin at stop.
 * "Process Data.vi": This VI is executed cyclic. Use the "Read" and "Write" methods of the capabilities to read or write data from or to the channels. The values provided by the "Read" methods should be used as inputs for the driver calls. Values gotten by a driver call can be written to the channels using the "Write" methods. (Remove the simulation between the "Read" and "Write" methods and also the "Reads" and "Writes" you do not need.)
 
+## Requirements to work with PAtools AMS group
+If you developed a plugin not using the capabilities you can still make it compatible with PAtools. But it needs to match these requirements:
+* Only use the allowed datatypes (see [CONTRIBUTING.md](CONTRIBUTING.md))
+* The channel names need to start with the InstanceName
+* The plugin needs to create the channels in init phase
+* The plugin needs to call the ChannelCoordinator to run them as external process
+* Ability to create a PAtools importable json (have a look on the templates and the "Build Cluster JSON.vi" in Capabilities -> Utilities )
+* Ability to run on a NI-Linux RT PXI
+
 ## Testing without PAtools
 
 ### Within the Project

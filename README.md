@@ -2,7 +2,7 @@
 
 A capability in Battery Lab Software (AMS) is a feature that any device (Cycler, Chiller, Chamber, Power Supply, E-Load, etc.) can choose to provide. Each capability is creating one or multiple channels that are used to communicate between systems, e.g., LabView and PAtools. They provide methods for Initialize, Close, Read and Write.
 
-This repo contains the various implementations for AMS-compatible capabilities that can be used to accelerate the creation of a AMS Plugin. Include an instance of these classes in your AMS Plugin and it will handle the underlying channel data communication.
+This repo contains the various implementations for AMS-compatible capabilities that can be used to accelerate the creation of a AMS Plugins. Include an instance of these classes in your AMS Plugin and it will handle the underlying channel data communication.
 
 # Requirements
 Requirements to use the AMS Capabilities and AMS Templates:
@@ -18,6 +18,7 @@ Here is a list of known ams plugins used with PAtools:
 * [AMS Power Supply RMX-412x-plugin](https://github.com/ni/ams-power-supply-RMX-412x-plugin)
 * [AMS VCOM](https://github.com/ni/ams-vcom/)
 * [AMS Bitrode BTDC Cycler](https://github.com/ni/ams-bitrode-btdc/)
+* [AMS DAQ SinglePoint](https://github.com/ni/ams-daq-singlepoint)
 
 Templates:
 
@@ -139,11 +140,11 @@ Coming from PAtools and used in capabilities for naming channels:
 - STS = Status (displaying an integer as a status; can be error codes, but also in which control mode the device is)
 
 # Creating your own LLCs/HLCs
-Take a look at the [CONTRIBUTING.md](CONTRIBUTING.md)
+If you use templates you will have your own class, where you can make changes. If you feel like that exact class could be used by others as well you can also add them to this project. For that take a look at [CONTRIBUTING.md](CONTRIBUTING.md)
 
 # Creating a plugin with Templates
 
-This project only provides the capabilities and some helper VIs. To create a plugin, use a AMS-Template together with this project. [Here](AMSTEMPLATES.md) it is described how to create your own plugin.
+This project provides capabilities and some helper VIs. To create a plugin, use a AMS-Template together with this project. [Here](AMSTEMPLATES.md) it is described how to create your own plugin.
 
 * [AMS Cycler Plugin Template](https://github.com/ni/ams-cycler-plugin-template)
 * [AMS Power Supply Plugin Template](https://github.com/ni/ams-power-supply-plugin-template)
