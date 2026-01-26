@@ -34,6 +34,15 @@ The main work is done in the "AMS Power Supply Template.lvclass". In principal y
 * "Destroy Data Channels.vi": Add "Close" methods of the capabilities you added. This VI is executed once by the plugin at stop.
 * "Process Data.vi": This VI is executed cyclic. Use the "Read" and "Write" methods of the capabilities to read or write data from or to the channels. The values provided by the "Read" methods should be used as inputs for the driver calls. Values gotten by a driver call can be written to the channels using the "Write" methods. (Remove the simulation between the "Read" and "Write" methods and also the "Reads" and "Writes" you do not need.)
 
+## Shared clone reentrant and storing data
+All VIs use a shared clone reentrant execution. This creates a pool of that VI so parallel execution is possible.
+But: Unloading a plugin does not "destroy" that VI pool, meaning that stored data, e.g. in feedback nodes are not reset.
+Therefore it is important to reinitialize stored data within a plugin. 
+This can be achieved by e.g. adding a "Initialize" boolean (initialized with "true") to the class .ctl.
+When calling e.g. the "Process Data.vi" one can use an if-case to reset the stored data and then set it to "false".
+This is also done in our templates.
+If you do not do that, than you could have "old" data in a new loaded plugin, leading to undefined behaviour.
+
 ## Requirements to work with PAtools AMS group
 If you developed a plugin not using the capabilities you can still make it compatible with PAtools. But it needs to match these requirements:
 * Only use the allowed datatypes (see [CONTRIBUTING.md](CONTRIBUTING.md))
