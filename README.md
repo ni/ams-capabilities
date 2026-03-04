@@ -11,6 +11,8 @@ Requirements to use the AMS Capabilities and AMS Templates:
 * Battery Lab Software Plug-In Developer Toolkit (part of PAtools installer)
 * JKI JSON, Structure Error Handler and JSONtext library from VI Package Manager.
 
+Starting with the 2026 Q2 release, AMS plugins were updated to operate without an NI legacy dependency called *EVO*. Therefore older plugins need to be adapted see [26Q2-EVO-Removal](26Q2-EVO-Removal.md)
+
 # AMS plugins repositories compatible with PAtools
 
 Here is a list of known ams plugins used with PAtools:
