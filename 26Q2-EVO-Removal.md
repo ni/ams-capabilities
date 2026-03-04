@@ -10,6 +10,7 @@ AMS Plugins developed by users with the *Battery Lab Software Plug-In Developer 
   - While the project loads, LabVIEW is expected to display dialogs searching for the following EVO dependencies (and potentially others). For each of these you can click *Cancel* and *Ignore Item*.
     - *GetCreateReason.vi*
     - *Handle.ctl*
+    
   ![image](docs/img/evo_removal_cancel.png)
   ![image](docs/img/evo_removal_ignore_item.png)
 
@@ -51,10 +52,12 @@ AMS Plugins developed by users with the *Battery Lab Software Plug-In Developer 
   - Locate and open the *Initialize.vi* for your plugin and copy *Initialize Coordinator.vi*
 
   ![image](docs/img/evo_removal_locate_Initialize.png)
+  ![image](docs/img/evo_removal_initialize_bd_before.png)
 
   - Close the vi, delete it, recreate it as overwrite VI and add *Initialize Coordinator.vi* again. Save it.
+
   ![image](docs/img/evo_removal_vi_for_override.png)
-  ![image](docs/img/evo_removal_fix_testVI.png)
+  ![image](docs/img/evo_removal_initialize_bd_after.png)
 
 5. Increase the version of your plugin library (optionally, but recommended).
   ![image](docs/img/evo_removal_increase_version.png)
