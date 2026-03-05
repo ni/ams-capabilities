@@ -1,4 +1,4 @@
- 2026 Q2 EVO Dependency Removal
+## 2026 Q2 EVO Dependency Removal
 
 Starting with the 2026 Q2 release, the AMS plugins were updated to operate without an NI legacy dependency called *EVO*.
 
