@@ -7,9 +7,11 @@ This repo contains the various implementations for AMS-compatible capabilities t
 # Requirements
 Requirements to use the AMS Capabilities and AMS Templates:
 
-* LabView2024
+* LabView2026
 * Battery Lab Software Plug-In Developer Toolkit (part of PAtools installer)
 * JKI JSON, Structure Error Handler and JSONtext library from VI Package Manager.
+
+Starting with the 2026 Q2 release, AMS plugins were updated to operate without an NI legacy dependency called *EVO*. Therefore older plugins need to be adapted see [26Q2-EVO-Removal](26Q2-EVO-Removal.md)
 
 # AMS plugins repositories compatible with PAtools
 
